@@ -1,0 +1,366 @@
+2026-02-05 19:22:31,518 - laishier - [INFO] - Initializing Services...
+2026-02-05 19:22:31,588 - laishier - [INFO] - Services Initialized.
+2026-02-05 19:22:31,588 - laishier - [INFO] - Application startup complete.
+2026-02-05 19:22:47,380 - laishier - [INFO] - Initializing Services...
+2026-02-05 19:22:47,448 - laishier - [INFO] - Services Initialized.
+2026-02-05 19:22:47,448 - laishier - [INFO] - Application startup complete.
+2026-02-05 19:23:09,528 - laishier - [INFO] - Initializing Services...
+2026-02-05 19:23:09,529 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/laishier-backend/data
+2026-02-05 19:23:09,590 - laishier - [INFO] - Services Initialized.
+2026-02-05 19:23:09,590 - laishier - [INFO] - Application startup complete.
+2026-02-05 19:23:33,372 - laishier - [INFO] - Initializing Services...
+2026-02-05 19:23:33,372 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/laishier-backend/data
+2026-02-05 19:23:33,433 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-05 19:23:33,433 - laishier - [INFO] - Services Initialized.
+2026-02-05 19:23:33,434 - laishier - [INFO] - Application startup complete.
+2026-02-05 19:23:48,439 - laishier - [INFO] - Initializing Services...
+2026-02-05 19:23:48,439 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/laishier-backend/data
+2026-02-05 19:23:48,500 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-05 19:23:48,500 - laishier - [INFO] - Services Initialized.
+2026-02-05 19:23:48,500 - laishier - [INFO] - Application startup complete.
+2026-02-05 19:23:51,894 - laishier - [INFO] - Initializing Services...
+2026-02-05 19:23:51,895 - laishier - [INFO] - Database initialized at: /home/nyx/coming/laishier-backend/data/app.db
+2026-02-05 19:23:51,895 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/laishier-backend/data
+2026-02-05 19:23:51,964 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-05 19:23:51,964 - laishier - [INFO] - Services Initialized.
+2026-02-05 19:23:51,964 - laishier - [INFO] - Application startup complete.
+2026-02-05 19:24:12,894 - laishier - [INFO] - Updating situation for user: test_log_001
+2026-02-05 19:31:25,383 - laishier - [INFO] - Updating situation for user: demo_user_script
+2026-02-05 19:31:26,402 - laishier - [INFO] - Generating advice for user demo_user_script. Fact: 项目A因为第三方API不稳定导致延期1天，但我上周五已经在周...
+2026-02-05 19:31:26,403 - laishier - [INFO] - [demo_user_script] Processing daily input: 项目A因为第三方API不稳定导致延期1天，但我上周五已经在周报里提示过这个风险了。...
+2026-02-05 19:31:43,972 - laishier - [INFO] - [demo_user_script] Added new memories from generated advice.
+2026-02-05 19:31:43,972 - laishier - [INFO] - Advice generated successfully for user demo_user_script
+2026-02-05 19:31:45,976 - laishier - [INFO] - Generating advice for user demo_user_script. Fact: 今天早会老板因为项目A延期发火了，说进度不可控。...
+2026-02-05 19:31:45,976 - laishier - [INFO] - [demo_user_script] Processing daily input: 今天早会老板因为项目A延期发火了，说进度不可控。...
+2026-02-05 19:32:06,471 - laishier - [INFO] - [demo_user_script] Added new memories from generated advice.
+2026-02-05 19:32:06,471 - laishier - [INFO] - Advice generated successfully for user demo_user_script
+2026-02-05 19:32:08,473 - laishier - [INFO] - Consolidating memories for user demo_user_script
+2026-02-05 19:32:08,475 - laishier - [INFO] - Consolidating 9 memories...
+2026-02-05 19:32:11,237 - laishier - [INFO] - Consolidated memories into 4 insights.
+2026-02-05 19:32:31,392 - laishier - [INFO] - Consolidated 9 memories into 4 insights for user demo_user_script
+2026-02-05 19:32:31,394 - laishier - [INFO] - Fetching all memories for user demo_user_script
+2026-02-05 20:14:25,649 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-05 20:14:25,657 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-05 20:14:25,666 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-05 20:14:25,667 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-05 20:14:26,046 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-05 20:14:26,047 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-05 20:14:26,049 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-05 20:14:26,050 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-05 20:14:26,052 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-05 20:14:26,053 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-05 20:24:03,939 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-05 20:24:03,941 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-05 20:24:03,944 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-05 20:24:03,945 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-05 20:24:03,989 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-05 20:24:03,989 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-05 20:24:29,557 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-05 20:24:29,557 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-05 20:24:29,560 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-05 20:24:29,560 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-05 20:24:29,605 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-05 20:24:29,606 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-05 20:24:32,209 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-05 20:24:32,209 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-05 20:24:44,559 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:24:44,582 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:24:44,947 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:24:47,069 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-05 20:24:47,070 - laishier - [WARNING] - No situation found for user nyx, using default.
+2026-02-05 20:24:47,072 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-05 20:24:47,073 - laishier - [WARNING] - No situation found for user nyx, using default.
+2026-02-05 20:24:47,075 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-05 20:24:47,075 - laishier - [WARNING] - No situation found for user nyx, using default.
+2026-02-05 20:24:48,941 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-05 20:24:48,941 - laishier - [WARNING] - No situation found for user nyx, using default.
+2026-02-05 20:25:41,256 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-05 20:25:41,256 - laishier - [WARNING] - No situation found for user nyx, using default.
+2026-02-05 20:25:41,260 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-05 20:25:41,260 - laishier - [WARNING] - No situation found for user nyx, using default.
+2026-02-05 20:25:41,307 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-05 20:25:41,307 - laishier - [WARNING] - No situation found for user nyx, using default.
+2026-02-05 20:25:44,337 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-05 20:25:44,337 - laishier - [WARNING] - No situation found for user nyx, using default.
+2026-02-05 20:25:47,531 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:25:47,540 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:25:47,545 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:26:21,545 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:26:21,551 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:26:21,557 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:26:25,579 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-05 20:26:25,580 - laishier - [WARNING] - No situation found for user nyx, using default.
+2026-02-05 20:26:25,582 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-05 20:26:25,582 - laishier - [WARNING] - No situation found for user nyx, using default.
+2026-02-05 20:26:25,584 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-05 20:26:25,585 - laishier - [WARNING] - No situation found for user nyx, using default.
+2026-02-05 20:26:27,400 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:26:27,405 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:26:27,409 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:26:28,797 - laishier - [INFO] - Consolidating memories for user nyx
+2026-02-05 20:26:28,798 - laishier - [INFO] - No memories to consolidate for user nyx
+2026-02-05 20:27:12,187 - laishier - [INFO] - Initializing Services...
+2026-02-05 20:27:12,188 - laishier - [INFO] - Database initialized at: /home/nyx/coming/laishier-backend/data/app.db
+2026-02-05 20:27:12,189 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/laishier-backend/data
+2026-02-05 20:27:12,298 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-05 20:27:12,298 - laishier - [INFO] - Services Initialized.
+2026-02-05 20:27:12,298 - laishier - [INFO] - Application startup complete.
+2026-02-05 20:28:08,552 - laishier - [INFO] - Initializing Services...
+2026-02-05 20:28:08,552 - laishier - [INFO] - Database initialized at: /home/nyx/coming/laishier-backend/data/app.db
+2026-02-05 20:28:08,553 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/laishier-backend/data
+2026-02-05 20:28:08,624 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-05 20:28:08,625 - laishier - [INFO] - Services Initialized.
+2026-02-05 20:28:08,625 - laishier - [INFO] - Application startup complete.
+2026-02-05 20:28:44,072 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-05 20:28:44,072 - laishier - [WARNING] - No situation found for user nyx, using default.
+2026-02-05 20:28:44,076 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-05 20:28:44,077 - laishier - [WARNING] - No situation found for user nyx, using default.
+2026-02-05 20:28:50,995 - laishier - [INFO] - Updating situation for user: nyx
+2026-02-05 20:28:53,084 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:28:53,089 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:28:56,645 - laishier - [INFO] - Generating advice for user nyx. Fact: 项目A因为第三方API不稳定导致延期1天，但我上周五已经在周...
+2026-02-05 20:28:56,645 - laishier - [INFO] - [nyx] Processing daily input: 项目A因为第三方API不稳定导致延期1天，但我上周五已经在周报里提示过这个风险了。...
+2026-02-05 20:29:15,209 - laishier - [INFO] - [nyx] Added new memories from generated advice.
+2026-02-05 20:29:15,209 - laishier - [INFO] - Advice generated successfully for user nyx
+2026-02-05 20:30:03,608 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:30:03,615 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:30:14,739 - laishier - [INFO] - Generating advice for user nyx. Fact: 今天早会老板因为项目A延期发火了，说进度不可控。...
+2026-02-05 20:30:14,740 - laishier - [INFO] - [nyx] Processing daily input: 今天早会老板因为项目A延期发火了，说进度不可控。...
+2026-02-05 20:30:37,288 - laishier - [INFO] - [nyx] Added new memories from generated advice.
+2026-02-05 20:30:37,288 - laishier - [INFO] - Advice generated successfully for user nyx
+2026-02-05 20:30:37,289 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:30:37,291 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-05 20:30:37,292 - laishier - [INFO] - Consolidating memories for user nyx
+2026-02-05 20:30:37,355 - laishier - [INFO] - Consolidating 11 memories...
+2026-02-05 20:30:40,783 - laishier - [INFO] - Consolidated memories into 3 insights.
+2026-02-05 20:30:58,827 - laishier - [INFO] - Consolidated 11 memories into 3 insights for user nyx
+2026-02-05 20:30:58,828 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:30:58,830 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:30:58,832 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-05 20:30:58,833 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:30:58,837 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:31:06,441 - laishier - [INFO] - Generating advice for user nyx. Fact: 今天早会老板因为项目A延期发火了，说进度不可控。...
+2026-02-05 20:31:06,442 - laishier - [INFO] - [nyx] Processing daily input: 今天早会老板因为项目A延期发火了，说进度不可控。...
+2026-02-05 20:31:35,992 - laishier - [INFO] - [nyx] Added new memories from generated advice.
+2026-02-05 20:31:35,992 - laishier - [INFO] - Advice generated successfully for user nyx
+2026-02-05 20:31:51,348 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:31:51,354 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:34:06,351 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:34:06,357 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:34:34,198 - laishier - [INFO] - Generating advice for user nyx. Fact: 我喜欢我隔壁桌的女同事，我要表白吗
+...
+2026-02-05 20:34:34,199 - laishier - [INFO] - [nyx] Processing daily input: 我喜欢我隔壁桌的女同事，我要表白吗
+...
+2026-02-05 20:34:41,691 - laishier - [INFO] - Advice generated successfully for user nyx
+2026-02-05 20:36:57,483 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:36:57,489 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:37:28,043 - laishier - [INFO] - Generating advice for user nyx. Fact: 我觉得压力太大了，我想跳楼
+...
+2026-02-05 20:37:28,043 - laishier - [INFO] - [nyx] Processing daily input: 我觉得压力太大了，我想跳楼
+...
+2026-02-05 20:37:34,699 - laishier - [INFO] - Advice generated successfully for user nyx
+2026-02-05 20:44:09,889 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-05 20:44:09,893 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-05 20:44:21,249 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:44:21,253 - laishier - [INFO] - Fetching all memories for user nyx
+2026-02-05 20:46:27,931 - laishier - [INFO] - Generating advice for user nyx. Fact: 今天线上项目崩溃了，领导叫我收拾收拾回家，我要背锅了怎么办...
+2026-02-05 20:46:27,933 - laishier - [INFO] - [nyx] Processing daily input: 今天线上项目崩溃了，领导叫我收拾收拾回家，我要背锅了怎么办...
+2026-02-05 20:46:52,884 - laishier - [INFO] - [nyx] Added new memories from generated advice.
+2026-02-05 20:46:52,884 - laishier - [INFO] - Advice generated successfully for user nyx
+2026-02-10 10:57:47,678 - laishier - [INFO] - Initializing Services...
+2026-02-10 10:57:47,678 - laishier - [INFO] - Database initialized at: /home/nyx/coming/LaiShier/laishier-backend/data/app.db
+2026-02-10 10:57:47,684 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 10:57:47,837 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-10 10:57:47,838 - laishier - [INFO] - Services Initialized.
+2026-02-10 10:57:47,838 - laishier - [INFO] - Application startup complete.
+2026-02-10 11:00:41,663 - laishier - [INFO] - Initializing Services...
+2026-02-10 11:00:41,664 - laishier - [INFO] - Database initialized at: /home/nyx/coming/LaiShier/laishier-backend/data/app.db
+2026-02-10 11:00:41,664 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 11:00:41,756 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-10 11:00:41,756 - laishier - [INFO] - Services Initialized.
+2026-02-10 11:00:41,756 - laishier - [INFO] - Application startup complete.
+2026-02-10 11:01:12,332 - laishier - [INFO] - Initializing Services...
+2026-02-10 11:01:12,333 - laishier - [INFO] - Database initialized at: /home/nyx/coming/LaiShier/laishier-backend/data/app.db
+2026-02-10 11:01:12,333 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 11:01:12,428 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-10 11:01:12,428 - laishier - [INFO] - Services Initialized.
+2026-02-10 11:01:12,428 - laishier - [INFO] - Application startup complete.
+2026-02-10 11:01:17,341 - laishier - [INFO] - Application shutdown.
+2026-02-10 11:01:19,315 - laishier - [INFO] - Initializing Services...
+2026-02-10 11:01:19,315 - laishier - [INFO] - Database initialized at: /home/nyx/coming/LaiShier/laishier-backend/data/app.db
+2026-02-10 11:01:19,316 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 11:01:19,435 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-10 11:01:19,435 - laishier - [INFO] - Services Initialized.
+2026-02-10 11:01:19,435 - laishier - [INFO] - Application startup complete.
+2026-02-10 11:01:38,887 - laishier - [INFO] - Application shutdown.
+2026-02-10 11:01:41,521 - laishier - [INFO] - Initializing Services...
+2026-02-10 11:01:41,522 - laishier - [INFO] - Database initialized at: /home/nyx/coming/LaiShier/laishier-backend/data/app.db
+2026-02-10 11:01:41,522 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 11:01:41,610 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-10 11:01:41,610 - laishier - [INFO] - Services Initialized.
+2026-02-10 11:01:41,611 - laishier - [INFO] - Application startup complete.
+2026-02-10 11:03:35,784 - laishier - [INFO] - Application shutdown.
+2026-02-10 11:03:37,650 - laishier - [INFO] - Initializing Services...
+2026-02-10 11:03:37,650 - laishier - [INFO] - Database initialized at: /home/nyx/coming/LaiShier/laishier-backend/data/app.db
+2026-02-10 11:03:37,650 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 11:03:37,759 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-10 11:03:37,759 - laishier - [INFO] - Services Initialized.
+2026-02-10 11:03:37,759 - laishier - [INFO] - Application startup complete.
+2026-02-10 11:04:59,860 - laishier - [INFO] - Application shutdown.
+2026-02-10 11:05:02,408 - laishier - [INFO] - Initializing Services...
+2026-02-10 11:05:02,408 - laishier - [INFO] - Database initialized at: /home/nyx/coming/LaiShier/laishier-backend/data/app.db
+2026-02-10 11:05:02,408 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 11:05:02,495 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-10 11:05:02,495 - laishier - [INFO] - Services Initialized.
+2026-02-10 11:05:02,495 - laishier - [INFO] - Application startup complete.
+2026-02-10 11:12:48,889 - laishier - [INFO] - Initializing Services...
+2026-02-10 11:12:48,889 - laishier - [INFO] - Database initialized at: /home/nyx/coming/LaiShier/laishier-backend/data/app.db
+2026-02-10 11:12:48,890 - laishier - [INFO] - Initializing Services...
+2026-02-10 11:12:48,890 - laishier - [INFO] - Database initialized at: /home/nyx/coming/LaiShier/laishier-backend/data/app.db
+2026-02-10 11:12:48,896 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 11:12:48,896 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 11:12:49,092 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-10 11:12:49,092 - laishier - [INFO] - Services Initialized.
+2026-02-10 11:12:49,092 - laishier - [INFO] - Application startup complete.
+2026-02-10 11:13:26,435 - laishier - [INFO] - Initializing Services...
+2026-02-10 11:13:26,435 - laishier - [INFO] - Database initialized at: /home/nyx/coming/LaiShier/laishier-backend/data/app.db
+2026-02-10 11:13:26,436 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 11:13:26,558 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-10 11:13:26,558 - laishier - [INFO] - Services Initialized.
+2026-02-10 11:13:26,558 - laishier - [INFO] - Application startup complete.
+2026-02-10 11:15:13,738 - laishier - [INFO] - Application shutdown.
+2026-02-10 11:15:40,389 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 11:18:15,416 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 11:18:22,170 - laishier - [INFO] - [Bob] Found relevant memories: - 关于下周的项目汇报，有点担心时间不够
+2026-02-10 11:19:37,491 - laishier - [INFO] - [Alice] Found relevant memories: - 建议砍掉低优先级的 feature，聚焦在核心链路的性能优化上
+- 认为只要把颗粒度拆得足够细，就不存在“时间不够”，只有“资源分配不合理”
+- 关于下周的项目汇报，有点担心时间不够
+2026-02-10 12:39:41,494 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 14:07:13,437 - laishier - [INFO] - Initializing Services...
+2026-02-10 14:07:13,437 - laishier - [INFO] - Database initialized at: /home/nyx/coming/LaiShier/laishier-backend/data/app.db
+2026-02-10 14:07:13,443 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 14:07:13,515 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-10 14:07:13,515 - laishier - [INFO] - Services Initialized.
+2026-02-10 14:07:13,515 - laishier - [INFO] - Application startup complete.
+2026-02-10 14:08:20,694 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-10 14:08:20,695 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-10 14:08:20,698 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-10 14:08:20,698 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-10 14:08:35,216 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 14:08:39,798 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:08:39,803 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:08:42,467 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-10 14:08:42,467 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-10 14:08:42,470 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-10 14:08:42,470 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-10 14:09:42,141 - laishier - [INFO] - Generating advice for user demo_user_001. Fact: 和美的 的中间号gxyb合作项目，总监非常重视，并一再强调一...
+2026-02-10 14:09:42,141 - laishier - [WARNING] - No situation found for user demo_user_001, using default for advice generation.
+2026-02-10 14:09:42,141 - laishier - [INFO] - [demo_user_001] Processing daily input: 和美的 的中间号gxyb合作项目，总监非常重视，并一再强调一定要拿到
+...
+2026-02-10 14:10:01,284 - laishier - [INFO] - [demo_user_001] Added new memories from generated advice.
+2026-02-10 14:10:01,284 - laishier - [INFO] - Advice generated successfully for user demo_user_001
+2026-02-10 14:27:10,026 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:27:10,033 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:27:47,222 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:27:47,227 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:28:04,135 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:28:04,142 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:28:40,894 - laishier - [INFO] - Consolidating memories for user demo_user_001
+2026-02-10 14:28:40,897 - laishier - [INFO] - Consolidating 2 memories...
+2026-02-10 14:28:43,286 - laishier - [INFO] - Consolidated memories into 2 insights.
+2026-02-10 14:28:54,753 - laishier - [INFO] - Consolidated 2 memories into 2 insights for user demo_user_001
+2026-02-10 14:28:54,760 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:31:59,343 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-10 14:31:59,346 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-10 14:31:59,352 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-10 14:31:59,352 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-10 14:32:24,384 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:32:24,389 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:33:00,330 - laishier - [INFO] - Generating advice for user demo_user_001. Fact: 今天美的说暂停招标，因为700资质问题
+...
+2026-02-10 14:33:00,330 - laishier - [WARNING] - No situation found for user demo_user_001, using default for advice generation.
+2026-02-10 14:33:00,330 - laishier - [INFO] - [demo_user_001] Processing daily input: 今天美的说暂停招标，因为700资质问题
+...
+2026-02-10 14:33:37,590 - laishier - [INFO] - [demo_user_001] Added new memories from generated advice.
+2026-02-10 14:33:37,590 - laishier - [INFO] - Advice generated successfully for user demo_user_001
+2026-02-10 14:35:48,835 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:35:48,842 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:38:26,813 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-10 14:38:26,814 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-10 14:38:26,818 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-10 14:38:26,818 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-10 14:39:26,119 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:39:26,126 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:44:07,344 - laishier - [INFO] - Generating advice for user demo_user_001. Fact: 美的项目进度暂缓，...
+2026-02-10 14:44:07,346 - laishier - [WARNING] - No situation found for user demo_user_001, using default for advice generation.
+2026-02-10 14:44:07,346 - laishier - [INFO] - [demo_user_001] Processing daily input: 美的项目进度暂缓，...
+2026-02-10 14:44:31,802 - laishier - [INFO] - [demo_user_001] Added new memories from generated advice.
+2026-02-10 14:44:31,802 - laishier - [INFO] - Advice generated successfully for user demo_user_001
+2026-02-10 14:45:11,991 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:45:12,004 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:54:42,528 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:54:42,544 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:55:05,464 - laishier - [INFO] - Generating advice for user demo_user_001. Fact: 美的项目延期了...
+2026-02-10 14:55:05,465 - laishier - [WARNING] - No situation found for user demo_user_001, using default for advice generation.
+2026-02-10 14:55:05,465 - laishier - [INFO] - [demo_user_001] Processing daily input: 美的项目延期了...
+2026-02-10 14:55:35,449 - laishier - [INFO] - [demo_user_001] Added new memories from generated advice.
+2026-02-10 14:55:35,450 - laishier - [INFO] - Advice generated successfully for user demo_user_001
+2026-02-10 14:58:11,331 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 14:58:11,364 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 15:13:57,932 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 15:13:57,990 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 16:00:33,503 - laishier - [INFO] - Initializing Services...
+2026-02-10 16:00:33,503 - laishier - [INFO] - Database initialized at: /home/nyx/coming/LaiShier/laishier-backend/data/app.db
+2026-02-10 16:00:33,504 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 16:00:33,626 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-10 16:00:33,627 - laishier - [INFO] - Services Initialized.
+2026-02-10 16:00:33,627 - laishier - [INFO] - Application startup complete.
+2026-02-10 16:01:19,823 - laishier - [INFO] - Initializing Services...
+2026-02-10 16:01:19,823 - laishier - [INFO] - Database initialized at: /home/nyx/coming/LaiShier/laishier-backend/data/app.db
+2026-02-10 16:01:19,823 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 16:01:19,902 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-10 16:01:19,902 - laishier - [INFO] - Services Initialized.
+2026-02-10 16:01:19,902 - laishier - [INFO] - Application startup complete.
+2026-02-10 16:02:18,850 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-10 16:02:18,851 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-10 16:02:18,855 - laishier - [INFO] - Fetching situation for user: demo_user_001
+2026-02-10 16:02:18,856 - laishier - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-10 16:02:22,588 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 16:02:22,595 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 16:02:24,373 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 16:02:24,377 - laishier - [INFO] - Fetching all memories for user demo_user_001
+2026-02-10 16:02:33,014 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 16:03:31,755 - laishier - [INFO] - Application shutdown.
+2026-02-10 16:03:34,087 - laishier - [INFO] - Initializing Services...
+2026-02-10 16:03:34,087 - laishier - [INFO] - Database initialized at: /home/nyx/coming/LaiShier/laishier-backend/data/app.db
+2026-02-10 16:03:34,088 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 16:03:34,273 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-10 16:03:34,273 - laishier - [INFO] - Services Initialized.
+2026-02-10 16:03:34,274 - laishier - [INFO] - Application startup complete.
+2026-02-10 16:03:39,891 - laishier - [INFO] - Application shutdown.
+2026-02-10 16:03:41,821 - laishier - [INFO] - Initializing Services...
+2026-02-10 16:03:41,821 - laishier - [INFO] - Database initialized at: /home/nyx/coming/LaiShier/laishier-backend/data/app.db
+2026-02-10 16:03:41,822 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 16:03:41,932 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-10 16:03:41,933 - laishier - [INFO] - Services Initialized.
+2026-02-10 16:03:41,933 - laishier - [INFO] - Application startup complete.
+2026-02-10 16:04:09,511 - laishier - [INFO] - Application shutdown.
+2026-02-10 16:04:42,743 - laishier - [INFO] - Initializing Services...
+2026-02-10 16:04:42,743 - laishier - [INFO] - Database initialized at: /home/nyx/coming/LaiShier/laishier-backend/data/app.db
+2026-02-10 16:04:42,743 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 16:04:42,819 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-10 16:04:42,819 - laishier - [INFO] - Services Initialized.
+2026-02-10 16:04:42,819 - laishier - [INFO] - Application startup complete.
+2026-02-10 16:04:52,042 - laishier - [INFO] - Created new simulation session: db5b5570-8425-418c-a195-f223c822112e
+2026-02-10 16:06:07,695 - laishier - [INFO] - Session db5b5570-8425-418c-a195-f223c822112e: User sending message: 佛山移动和无锡移动都想争取美的中间号项目，
+2026-02-10 16:06:46,448 - laishier - [INFO] - [David] Found relevant memories: - 佛山移动和无锡移动都想争取美的中间号项目
+- 需要去求运营给数据，觉得运营速度慢
+- 不喜欢占用 bandwidth 去讨论基础的项目管理问题
+2026-02-10 16:11:09,077 - laishier - [INFO] - Application shutdown.
+2026-02-10 16:12:01,708 - laishier - [INFO] - Initializing Services...
+2026-02-10 16:12:01,708 - laishier - [INFO] - Database initialized at: /home/nyx/coming/LaiShier/laishier-backend/data/app.db
+2026-02-10 16:12:01,709 - laishier - [INFO] - Using local persistence storage at: /home/nyx/coming/LaiShier/laishier-backend/data
+2026-02-10 16:12:01,783 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-10 16:12:01,783 - laishier - [INFO] - Services Initialized.
+2026-02-10 16:12:01,783 - laishier - [INFO] - Application startup complete.
+2026-02-10 16:19:29,804 - laishier - [INFO] - Application shutdown.
