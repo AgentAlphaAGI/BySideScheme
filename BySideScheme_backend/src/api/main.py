@@ -5,11 +5,19 @@ from src.core.decision import DecisionEngine
 from src.core.generator import NarrativeGenerator
 from src.services.advisor import AdvisorService
 from src.api.schemas import FactInput, SituationUpdate, MemoryQuery
-from src.core.situation import SituationModel
+from src.core.situation import SituationModel, Stakeholder
 from src.core.database import DatabaseManager
 from src.core.logger import logger
 import os
 from dotenv import load_dotenv
+import logging
+
+# Filter out the specific AutoGen warning about API key format
+class APIKeyWarningFilter(logging.Filter):
+    def filter(self, record):
+        return "The API key specified is not a valid OpenAI format" not in record.getMessage()
+
+logging.getLogger("autogen.oai.client").addFilter(APIKeyWarningFilter())
 
 # 加载环境变量
 load_dotenv()
@@ -103,7 +111,15 @@ async def get_situation(user_id: str):
                 current_level="P6",
                 target_level="P7",
                 promotion_window=True,
-                boss_style="风险厌恶型",
+                stakeholders=[
+                    Stakeholder(
+                        name="默认老板",
+                        role="直属上级",
+                        style="风险厌恶型",
+                        relationship="中立",
+                        influence_level="High"
+                    )
+                ],
                 current_phase="观察期",
                 personal_goal="想拼一把冲一下",
                 recent_events=[]
@@ -123,15 +139,23 @@ async def generate_advice(input_data: FactInput, service: AdvisorService = Depen
         logger.warning(f"No situation found for user {input_data.user_id}, using default for advice generation.")
         # 如果没有设置，使用默认配置 (或者报错)
         situation = SituationModel(
-            career_type="互联网大厂",
-            current_level="P6",
-            target_level="P7",
-            promotion_window=True,
-            boss_style="风险厌恶型",
-            current_phase="观察期",
-            personal_goal="想拼一把冲一下",
-            recent_events=[]
-        )
+                career_type="互联网大厂",
+                current_level="P6",
+                target_level="P7",
+                promotion_window=True,
+                stakeholders=[
+                    Stakeholder(
+                        name="默认老板",
+                        role="直属上级",
+                        style="风险厌恶型",
+                        relationship="中立",
+                        influence_level="High"
+                    )
+                ],
+                current_phase="观察期",
+                personal_goal="想拼一把冲一下",
+                recent_events=[]
+            )
     
     try:
         result = service.process_daily_input(input_data.user_id, input_data.fact, situation)

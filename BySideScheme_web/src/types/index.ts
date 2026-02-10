@@ -1,9 +1,17 @@
+export interface Stakeholder {
+  name: string;
+  role: string;
+  style: string;
+  relationship: string;
+  influence_level: 'High' | 'Medium' | 'Low';
+}
+
 export interface Situation {
   career_type: string;
   current_level: string;
   target_level: string;
   promotion_window: boolean;
-  boss_style: string;
+  stakeholders: Stakeholder[];
   current_phase: string;
   personal_goal: string;
   recent_events: string[];

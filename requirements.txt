@@ -1,1 +1,9 @@
 PyYAML
+openai
+mem0ai
+python-dotenv
+pydantic
+fastapi
+uvicorn
+pyautogen==0.2.35
+PyYAML

@@ -1,1 +1,31 @@
-BySideScheme_backend/.env
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+*.env
+.env.*
+
+# Data & Logs
+*.log
+*.sqlite
+*.db
+BySideScheme_backend/data/
+BySideScheme_backend/logs/
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Node
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 # Add project root to sys.path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from src.core.situation import SituationModel
+from src.core.situation import SituationModel, Stakeholder
 from src.services.advisor import AdvisorService
 # 使用真实的组件
 from src.core.memory import MemoryManager
@@ -35,7 +35,22 @@ def main():
         current_level="P6",
         target_level="P7",
         promotion_window=True,
-        boss_style="风险厌恶型",
+        stakeholders=[
+            Stakeholder(
+                name="张总",
+                role="直属老板",
+                style="风险厌恶型",
+                relationship="信任",
+                influence_level="High"
+            ),
+            Stakeholder(
+                name="隔壁老王",
+                role="隔壁组Lead",
+                style="老战友",
+                relationship="一般",
+                influence_level="Medium"
+            )
+        ],
         current_phase="观察期",
         personal_goal="想拼一把冲一下",
         recent_events=["上周刚出了一个线上小故障", "昨天帮老板挡了一个需求"]

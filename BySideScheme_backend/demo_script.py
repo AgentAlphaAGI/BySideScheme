@@ -33,7 +33,15 @@ def run_demo():
             "current_level": "P6",
             "target_level": "P7",
             "promotion_window": True,
-            "boss_style": "风险厌恶型",
+            "stakeholders": [
+                {
+                    "name": "直属老板",
+                    "role": "Line Manager",
+                    "style": "风险厌恶型",
+                    "relationship": "中立",
+                    "influence_level": "High"
+                }
+            ],
             "current_phase": "冲刺期",
             "personal_goal": "建立靠谱人设，争取晋升",
             "recent_events": []

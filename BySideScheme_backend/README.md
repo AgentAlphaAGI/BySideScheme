@@ -7,7 +7,8 @@
 ## ✨ 核心功能
 
 *   **🏢 局势建模 (Situation Modeling)**
-    *   数字化用户的职场画像（职级、晋升窗口、老板风格、当前阶段）。
+    *   数字化用户的职场画像（职级、晋升窗口、当前阶段）。
+    *   **[New] 多角色干系人分析 (Stakeholders)**：支持定义多个关键角色（如直属老板、Skip Manager、竞争对手），并配置其风格（如“风险厌恶型”）、关系状态（如“猜忌”）及影响力，AI 将综合考虑多方利益进行博弈分析。
     *   基于局势动态调整 AI 的决策逻辑（如：在“观察期”偏向保守，在“冲刺期”偏向激进）。
 
 *   **🗣️ 策略与话术生成 (Strategy & Narrative)**
@@ -36,28 +37,34 @@
 
 ## 🚀 快速开始
 
-### 1. 环境准备
+### 1. 环境准备 (使用 uv)
 
-确保已安装 Python 3.10 或更高版本。
+本项目推荐使用 [uv](https://github.com/astral-sh/uv) 进行极速依赖管理和构建。
 
 ```bash
-# 克隆项目（假设已下载）
-cd laishier-backend
+# 1. 安装 uv (如果尚未安装)
+pip install uv
+# 或 macOS: brew install uv
+# 或 Linux/WSL: curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# 创建虚拟环境
-python -m venv venv
+# 2. 进入项目目录
+cd BySideScheme_backend
 
-# 激活虚拟环境
-# Linux/macOS:
-source venv/bin/activate
-# Windows:
-# venv\Scripts\activate
+# 3. 创建虚拟环境 (速度极快)
+uv venv
 ```
 
 ### 2. 安装依赖
 
 ```bash
-pip install -r requirements.txt
+# 激活虚拟环境
+# Linux/macOS:
+source .venv/bin/activate
+# Windows:
+# .venv\Scripts\activate
+
+# 安装依赖
+uv pip install -r requirements.txt
 ```
 
 ### 3. 配置环境变量
@@ -83,7 +90,11 @@ SILICONFLOW_MODEL=Pro/zai-org/GLM-4.7  # 或 Qwen/Qwen2.5-72B-Instruct
 ### 4. 启动服务
 
 ```bash
+# 方式一：在激活的虚拟环境中
 python main.py
+
+# 方式二：使用 uv 直接运行 (无需手动激活)
+uv run main.py
 ```
 服务默认运行在 `http://localhost:8001`。
 
