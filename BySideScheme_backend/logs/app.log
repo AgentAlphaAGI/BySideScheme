@@ -364,3 +364,9 @@
 2026-02-10 16:12:01,783 - laishier - [INFO] - Services Initialized.
 2026-02-10 16:12:01,783 - laishier - [INFO] - Application startup complete.
 2026-02-10 16:19:29,804 - laishier - [INFO] - Application shutdown.
+2026-02-10 21:22:59,339 - laishier - [INFO] - Initializing Services...
+2026-02-10 21:22:59,339 - laishier - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-10 21:22:59,341 - laishier - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-10 21:22:59,521 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
+2026-02-10 21:22:59,521 - laishier - [INFO] - Services Initialized.
+2026-02-10 21:22:59,521 - laishier - [INFO] - Application startup complete.
