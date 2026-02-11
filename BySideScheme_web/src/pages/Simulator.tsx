@@ -1,32 +1,62 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Users, User, Bot, Trash2, Play, RefreshCw, MessageSquare } from 'lucide-react';
-import { startSimulation, chatSimulation, resetSimulation } from '../services/api';
-import { ChatMessage, SimulatorInitRequest } from '../types';
+import { Send, Users, User, Bot, Trash2, Play, RefreshCw, MessageSquare, PanelRightOpen, PanelRightClose } from 'lucide-react';
+import { startSimulation, resetSimulation, startChatJob } from '../services/api';
+import { ChatMessage, SimulatorInitRequest, Analysis, PersonConfig } from '../types';
 import { cn } from '../utils/cn';
+import AnalysisPanel from '../components/AnalysisPanel';
+import PersonaHistoryModal from '../components/PersonaHistoryModal';
+import { useUserStore } from '../store/userStore';
+
+const API_BASE_URL = 'http://localhost:8001';
 
 const Simulator = () => {
+  const { userId, user_name: storeUserName } = useUserStore((state: any) => ({ 
+    userId: state.userId, 
+    user_name: state.user_name || "Me" 
+  }));
+  
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [analysis, setAnalysis] = useState<Analysis | null>(null);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [showAnalysis, setShowAnalysis] = useState(true);
+  
+  // Modal state
+  const [historyModalOpen, setHistoryModalOpen] = useState(false);
+  const [selectedPersonForHistory, setSelectedPersonForHistory] = useState<string | null>(null);
+  
   const [config, setConfig] = useState<SimulatorInitRequest>({
-    user_name: "Me",
-    leaders: [
+    user_name: storeUserName,
+    user_id: userId,
+    people: [
       {
+        kind: 'leader',
         name: "David",
         title: "直属领导",
-        persona: "控制欲强，喜欢听好话，但关键时刻能扛事。口头禅是'抓手'、'赋能'、'闭环'。"
+        persona: "控制欲强，喜欢听好话，但关键时刻能扛事。口头禅是'抓手'、'赋能'、'闭环'。",
+        engine: "deepseek"
       },
       {
+        kind: 'leader',
         name: "Sarah",
         title: "部门总监",
-        persona: "结果导向，雷厉风行，不喜欢听借口，只看数据。"
+        persona: "结果导向，雷厉风行，不喜欢听借口，只看数据。",
+        engine: "qwen3"
+      },
+      {
+        kind: 'colleague',
+        name: "Alex",
+        title: "",
+        persona: "谨慎务实，擅长补充细节，喜欢把事情拆成可执行清单。",
+        engine: "glm"
       }
     ]
   });
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const eventSourceRef = useRef<EventSource | null>(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -36,19 +66,38 @@ const Simulator = () => {
     scrollToBottom();
   }, [messages]);
 
+  // Cleanup EventSource on unmount
+  useEffect(() => {
+    return () => {
+      if (eventSourceRef.current) {
+        eventSourceRef.current.close();
+      }
+    };
+  }, []);
+
   const handleStart = async () => {
     setIsLoading(true);
     try {
-      const res = await startSimulation(config);
+      const res = await startSimulation({
+        ...config,
+        user_id: userId // Ensure userId is passed
+      });
       setSessionId(res.session_id);
       setMessages([{
         sender: "System",
-        content: `模拟器已启动。当前场景：${config.leaders.map(c => `${c.name} (${c.title})`).join(', ')} 已上线。`,
+        content: `模拟器已启动。当前场景：${config.people?.map(c => `${c.name} (${c.title || c.kind})`).join(', ')} 已上线。`,
         role: "system",
         timestamp: Date.now()
       }]);
+      setAnalysis(null);
     } catch (error) {
       console.error("Failed to start simulation:", error);
+      setMessages(prev => [...prev, {
+        sender: "System",
+        content: "启动失败，请检查后端服务。",
+        role: "system",
+        timestamp: Date.now()
+      }]);
     } finally {
       setIsLoading(false);
     }
@@ -64,7 +113,12 @@ const Simulator = () => {
     }
     setSessionId(null);
     setMessages([]);
+    setAnalysis(null);
     setInput('');
+    if (eventSourceRef.current) {
+      eventSourceRef.current.close();
+      eventSourceRef.current = null;
+    }
   };
 
   const handleSend = async () => {
@@ -82,23 +136,80 @@ const Simulator = () => {
     setIsLoading(true);
 
     try {
-      const res = await chatSimulation(sessionId, userMsg.content);
-      const newMsgs = res.new_messages.map(m => ({
-        ...m,
-        timestamp: Date.now()
-      }));
-      setMessages(prev => [...prev, ...newMsgs]);
+      // Use Job API for streaming response
+      const res = await startChatJob(sessionId, userMsg.content);
+      const jobId = res.job_id;
+
+      // Close previous connection if exists
+      if (eventSourceRef.current) {
+        eventSourceRef.current.close();
+      }
+
+      // Start SSE
+      const es = new EventSource(`${API_BASE_URL}/simulator/jobs/${jobId}/stream`);
+      eventSourceRef.current = es;
+
+      es.addEventListener('message', (event) => {
+        try {
+          const data = JSON.parse(event.data);
+          setMessages(prev => {
+            // Check if message already exists to avoid duplicates (basic check by content and sender)
+            // Ideally backend should provide message IDs
+            const exists = prev.some(m => m.content === data.content && m.sender === data.sender && m.timestamp === data.timestamp);
+            if (exists) return prev;
+            
+            return [...prev, {
+              ...data,
+              timestamp: Date.now()
+            }];
+          });
+        } catch (e) {
+          console.error("Error parsing SSE message:", e);
+        }
+      });
+
+      es.addEventListener('analysis', (event) => {
+        try {
+          const data = JSON.parse(event.data);
+          setAnalysis(data);
+        } catch (e) {
+          console.error("Error parsing SSE analysis:", e);
+        }
+      });
+
+      es.addEventListener('status', (event) => {
+         // Handle status updates if needed
+         console.log("Job status:", event.data);
+      });
+
+      es.addEventListener('done', () => {
+        setIsLoading(false);
+        es.close();
+        eventSourceRef.current = null;
+      });
+
+      es.onerror = (err) => {
+        console.error("SSE Error:", err);
+        setIsLoading(false);
+        es.close();
+        eventSourceRef.current = null;
+      };
+
     } catch (error) {
-      console.error("Failed to send message:", error);
+      console.error("Failed to start chat job:", error);
       setMessages(prev => [...prev, {
         sender: "System",
         content: "发送失败，请重试。",
         role: "system",
         timestamp: Date.now()
       }]);
-    } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleOpenHistory = (personName: string) => {
+    setSelectedPersonForHistory(personName);
+    setHistoryModalOpen(true);
   };
 
   return (
@@ -115,6 +226,19 @@ const Simulator = () => {
         </div>
         
         <div className="flex gap-2">
+           <button
+            onClick={() => setShowAnalysis(!showAnalysis)}
+            className={cn(
+              "p-2 rounded-lg border transition-all",
+              showAnalysis 
+                ? "bg-neon-blue/20 text-neon-blue border-neon-blue/50" 
+                : "bg-black/40 text-gray-400 border-white/10 hover:text-white"
+            )}
+            title="Toggle Analysis Panel"
+          >
+            {showAnalysis ? <PanelRightClose className="w-5 h-5" /> : <PanelRightOpen className="w-5 h-5" />}
+          </button>
+          
           {!sessionId ? (
             <button
               onClick={handleStart}
@@ -139,7 +263,7 @@ const Simulator = () => {
       {/* Main Content */}
       <div className="flex-1 flex gap-6 overflow-hidden">
         {/* Config Panel (Left) */}
-        <div className="w-80 glass-panel p-4 flex flex-col gap-4 overflow-y-auto hidden md:flex">
+        <div className="w-64 glass-panel p-4 flex flex-col gap-4 overflow-y-auto hidden lg:flex flex-shrink-0">
           <div className="flex items-center gap-2 text-neon-blue font-semibold border-b border-white/10 pb-2">
             <Users className="w-4 h-4" />
             角色配置
@@ -152,15 +276,25 @@ const Simulator = () => {
             </div>
 
             <div className="space-y-2">
-              <div className="text-sm text-gray-400">领导 (Leaders)</div>
-              {config.leaders.map((leader, idx) => (
-                <div key={idx} className="p-3 bg-black/40 rounded-lg border border-neon-red/20">
+              <div className="text-sm text-gray-400">参与者 (Participants)</div>
+              {config.people?.map((person, idx) => (
+                <div key={idx} className="p-3 bg-black/40 rounded-lg border border-neon-red/20 relative group">
+                  <button
+                    onClick={() => handleOpenHistory(person.name)}
+                    className="absolute top-2 right-2 p-1 text-gray-500 hover:text-white opacity-0 group-hover:opacity-100 transition-all"
+                    title="查看画像演进历史"
+                  >
+                    <RefreshCw className="w-3 h-3" />
+                  </button>
                   <div className="font-medium text-neon-red flex items-center gap-2">
                     <User className="w-3 h-3" />
-                    {leader.name} <span className="text-xs text-gray-400">({leader.title})</span>
+                    {person.name} <span className="text-xs text-gray-400">({person.title || person.kind})</span>
                   </div>
-                  <div className="text-xs text-gray-500 mt-1 leading-relaxed">
-                    {leader.persona}
+                  <div className="text-xs text-gray-500 mt-1">
+                     Engine: {person.engine || 'Default'}
+                  </div>
+                  <div className="text-xs text-gray-500 mt-1 leading-relaxed line-clamp-3" title={person.persona}>
+                    {person.persona}
                   </div>
                 </div>
               ))}
@@ -174,7 +308,7 @@ const Simulator = () => {
           )}
         </div>
 
-        {/* Chat Area (Right) */}
+        {/* Chat Area (Center) */}
         <div className="flex-1 glass-panel flex flex-col overflow-hidden relative">
           {!sessionId && messages.length === 0 ? (
             <div className="flex-1 flex flex-col items-center justify-center text-gray-500 gap-4">
@@ -253,7 +387,32 @@ const Simulator = () => {
             </>
           )}
         </div>
+        
+        {/* Analysis Panel (Right) */}
+        {showAnalysis && (
+          <motion.div 
+            initial={{ width: 0, opacity: 0 }}
+            animate={{ width: 320, opacity: 1 }}
+            exit={{ width: 0, opacity: 0 }}
+            className="glass-panel flex flex-col overflow-hidden"
+          >
+             <div className="flex items-center gap-2 text-neon-purple font-semibold border-b border-white/10 p-4 pb-2">
+                <Bot className="w-4 h-4" />
+                实时洞察
+              </div>
+             <AnalysisPanel analysis={analysis} />
+           </motion.div>
+         )}
       </div>
+
+      {userId && selectedPersonForHistory && (
+        <PersonaHistoryModal
+          userId={userId}
+          personName={selectedPersonForHistory}
+          isOpen={historyModalOpen}
+          onClose={() => setHistoryModalOpen(false)}
+        />
+      )}
     </div>
   );
 };

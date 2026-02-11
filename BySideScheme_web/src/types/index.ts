@@ -71,9 +71,19 @@ export interface ConsolidateResponse {
 }
 
 // Simulator Types
+export interface PersonConfig {
+  kind: 'leader' | 'colleague';
+  name: string;
+  title: string;
+  persona: string;
+  engine?: string;
+}
+
 export interface SimulatorInitRequest {
+  user_id?: string;
   user_name: string;
-  leaders: {
+  people?: PersonConfig[];
+  leaders?: { // Backwards compatibility
     name: string;
     title: string;
     persona: string;
@@ -81,8 +91,10 @@ export interface SimulatorInitRequest {
 }
 
 export interface SimulatorRunRequest {
+  user_id?: string;
   user_name: string;
-  leaders: {
+  people?: PersonConfig[];
+  leaders?: { // Backwards compatibility
     name: string;
     title: string;
     persona: string;
@@ -91,8 +103,37 @@ export interface SimulatorRunRequest {
   max_rounds: number;
 }
 
+export interface Risk {
+  title: string;
+  severity: 'high' | 'medium' | 'low';
+  trigger: string;
+  impact: string;
+  evidence: string[];
+  mitigation: string[];
+}
+
+export interface PersonaUpdate {
+  person_name: string;
+  deviation_detected: boolean;
+  observed_traits: string[];
+  trait_behavior_chain: string;
+  evidence: string[];
+  updated_persona: string;
+  update_confidence: number;
+}
+
+export interface Analysis {
+  situation_insights: string[];
+  overall_risk_score: number;
+  risks: Risk[];
+  persona_updates: PersonaUpdate[];
+  next_actions: string[];
+  uncertainties: string[];
+}
+
 export interface SimulatorRunResponse {
   messages: ChatMessage[];
+  analysis: Analysis;
 }
 
 export interface SimulatorInitResponse {
@@ -109,6 +150,45 @@ export interface ChatMessage {
 export interface ChatResponse {
   session_id: string;
   new_messages: ChatMessage[];
+  analysis: Analysis;
+}
+
+// Job Types
+export interface JobResponse {
+  job_id: string;
+  status: 'pending' | 'running' | 'completed' | 'failed';
+  session_id: string;
+  created_at: number;
+  updated_at: number;
+  error?: string | null;
+}
+
+export interface JobResultResponse {
+  job_id: string;
+  session_id: string;
+  status: 'completed' | 'failed' | 'running' | 'pending';
+  messages: ChatMessage[];
+  analysis: Analysis | null;
+  error?: string | null;
+}
+
+// Persona Version Types
+export interface PersonaVersion {
+  id: string;
+  person_title: string;
+  persona: string;
+  deviation_summary: string;
+  confidence: number;
+  created_at: string;
+}
+
+export interface PersonaVersionsResponse {
+  versions: PersonaVersion[];
+}
+
+export interface RollbackResponse {
+  rolled_back_to: string;
+  new_version_id: string;
 }
 
 // Feedback Types

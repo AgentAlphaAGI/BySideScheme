@@ -1,39 +1,23 @@
-# 在旁术 (BySideScheme) - 您的职场智能军师 🧠💼
+# 在旁术 (BySideScheme) - 后端服务
 
-> **"职场如战场，不仅要会做事，更要会‘在旁术’。"**
+**在旁术** 的核心后端服务，基于 **FastAPI** + **AutoGen** + **Mem0** 构建，提供具备长期记忆与政治智慧的职场辅助能力。
 
-**在旁术** 是一个基于 AI 的职场辅助系统，旨在帮助用户在复杂的职场环境中进行**局势分析**、**策略制定**和**话术生成**。它不仅仅是一个简单的问答机器人，而是一个具备**长期记忆**、**局势感知**和**政治智慧**的智能 Agent。
+## ✨ 核心能力
 
-## ✨ 核心功能
-
-*   **🏢 局势建模 (Situation Modeling)**
-    *   数字化用户的职场画像（职级、晋升窗口、当前阶段）。
-    *   **[New] 多角色干系人分析 (Stakeholders)**：支持定义多个关键角色（如直属老板、Skip Manager、竞争对手），并配置其风格（如“风险厌恶型”）、关系状态（如“猜忌”）及影响力，AI 将综合考虑多方利益进行博弈分析。
-    *   基于局势动态调整 AI 的决策逻辑（如：在“观察期”偏向保守，在“冲刺期”偏向激进）。
-
-*   **🗣️ 策略与话术生成 (Strategy & Narrative)**
-    *   输入今日事实（如：“项目延期了”），AI 自动生成三层输出：
-        1.  **对上版本**：政治正确、情绪稳定、不仅是汇报更是管理老板预期。
-        2.  **自我版本**：还原真相、记录风险、不仅是记录更是复盘。
-        3.  **策略提示**：下一步行动建议。
-
-*   **🧠 智能记忆系统 (Intelligent Memory)**
-    *   **多维记忆**：自动分类存储“叙事记忆”、“政治记忆（关系/风险）”、“状态记忆”和“承诺记忆”。
-    *   **长期洞察**：具备记忆整理功能，能从零散的日常记录中提炼出长期模式（如：“老板周一情绪通常不稳定”）。
-    *   **本地持久化**：使用 `mem0` + `Qdrant` (向量) + `SQLite` (关系数据)，数据完全掌握在自己手中。
-
-*   **🔒 隐私与本地优先**
-    *   核心数据存储在本地 `data/` 目录。
-    *   支持接入 OpenAI 兼容接口（如 SiliconFlow / DeepSeek），灵活切换模型。
+*   **RESTful API**: 提供标准的 HTTP 接口，供前端或其他客户端调用。
+*   **多模型支持**: 兼容 OpenAI 协议，支持 DeepSeek (深度求索)、Qwen (通义千问)、GLM (智谱) 等主流大模型，可为不同角色指定不同模型。
+*   **本地记忆**: 集成 `mem0` + `Qdrant`，实现数据的本地向量化存储与检索，保障隐私。
+*   **流式响应**: 支持 SSE (Server-Sent Events) 与 WebSocket，实现打字机效果的实时对话体验。
+*   **任务队列**: 异步处理长耗时推演任务，支持状态轮询与结果订阅。
 
 ## 🛠️ 技术栈
 
-*   **Backend**: Python 3.10+, FastAPI
-*   **LLM Integration**: OpenAI SDK (Compatible with SiliconFlow/DeepSeek/GLM)
-*   **Memory**: [Mem0](https://github.com/mem0ai/mem0) (The Memory Layer for AI Apps)
-*   **Vector Store**: Qdrant (Local Mode)
-*   **Database**: SQLite
-*   **Logging**: Python standard logging (RotatingFileHandler)
+*   **Runtime**: Python 3.10+
+*   **Framework**: FastAPI
+*   **Agent Framework**: AutoGen
+*   **Memory**: Mem0 (Local Vector Store with Qdrant)
+*   **Database**: SQLite (Relational Data)
+*   **Package Manager**: uv (Ultra-fast Python package installer)
 
 ## 🚀 快速开始
 
@@ -47,7 +31,7 @@ pip install uv
 # 或 macOS: brew install uv
 # 或 Linux/WSL: curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# 2. 进入项目目录
+# 2. 进入后端目录
 cd BySideScheme_backend
 
 # 3. 创建虚拟环境 (速度极快)
@@ -57,204 +41,106 @@ uv venv
 ### 2. 安装依赖
 
 ```bash
-# 激活虚拟环境
-# Linux/macOS:
-source .venv/bin/activate
-# Windows:
-# .venv\Scripts\activate
+# 激活虚拟环境 (可选，uv run 可自动使用环境)
+# Linux/macOS: source .venv/bin/activate
+# Windows: .venv\Scripts\activate
 
 # 安装依赖
 uv pip install -r requirements.txt
 ```
 
-### 3. 配置环境变量
+### 3. 配置环境变量 (关键步骤)
 
-复制 `.env.example` 为 `.env` 并填入 API Key。
+复制 `.env.example` 为 `.env` 并填入必要的配置。**系统启动必须依赖此文件。**
 
 ```bash
 cp .env.example .env
 ```
 
-编辑 `.env` 文件：
+编辑 `.env` 文件，根据你的需求配置模型服务：
 
 ```ini
-# 推荐使用 SiliconFlow (硅基流动) 提供的模型服务
-SILICONFLOW_API_KEY=sk-your-key-here
-SILICONFLOW_BASE_URL=https://api.siliconflow.cn/v1
-SILICONFLOW_MODEL=Pro/zai-org/GLM-4.7  # 或 Qwen/Qwen2.5-72B-Instruct
+# ==========================================
+# 1. 基础安全配置 (可选)
+# ==========================================
+# API 访问密钥。设置后，前端请求 Header 必须携带 X-API-Key: your-secret-key
+# 如果留空，则不开启鉴权（仅限本地开发使用）
+LAISHIER_API_KEY=
 
-# 如果没有 SiliconFlow，也可以使用 OpenAI
-# OPENAI_API_KEY=sk-xxx
+# ==========================================
+# 2. 模型引擎配置 (至少配置一组)
+# ==========================================
+# 支持配置多组引擎，前缀可自定义 (如 SILICONFLOW, DEEPSEEK, OPENAI)
+
+# --- 引擎 A: SiliconFlow (推荐，集成 DeepSeek/Qwen 等) ---
+SILICONFLOW_API_KEY=sk-your-siliconflow-key
+SILICONFLOW_BASE_URL=https://api.siliconflow.cn/v1
+# 推荐模型: deepseek-ai/DeepSeek-V3, Qwen/Qwen2.5-72B-Instruct
+SILICONFLOW_MODEL=deepseek-ai/DeepSeek-V3
+
+# --- 引擎 B: OpenAI (可选) ---
+OPENAI_API_KEY=sk-your-openai-key
+OPENAI_BASE_URL=https://api.openai.com/v1
+OPENAI_MODEL=gpt-4o
+
+# ==========================================
+# 3. 模块引擎映射
+# ==========================================
+# 指定系统的各个模块分别使用哪个引擎 (填上面的前缀，大写)
+
+# 决策引擎 (Advisor): 用于生成策略、话术
+DECISION_ENGINE=SILICONFLOW
+
+# 叙事引擎 (Generator): 用于生成具体的回复文本
+NARRATIVE_ENGINE=SILICONFLOW
+
+# 洞察引擎 (Insights): 用于分析模拟器对话、提取风险
+SIMULATOR_INSIGHTS_ENGINE=SILICONFLOW
+
+# 默认引擎: 当未指定具体模型时使用
+DEFAULT_LLM_ENGINE=SILICONFLOW
 ```
 
 ### 4. 启动服务
 
 ```bash
-# 方式一：在激活的虚拟环境中
-python main.py
-
-# 方式二：使用 uv 直接运行 (无需手动激活)
+# 使用 uv 直接运行 (推荐)
 uv run main.py
-```
-服务默认运行在 `http://localhost:8001`。
 
-## 🎮 试用指南 (Demo Scenarios)
-
-### 方法一：一键体验脚本 (推荐)
-
-我们提供了一个 Python 脚本，可以自动执行完整的演示流程。
-
-```bash
-# 确保服务已启动
-python demo_script.py
+# 或手动激活环境后运行
+# python main.py
 ```
 
-脚本将自动模拟：
-1.  设定一个“P6 冲 P7”的职场局势。
-2.  **Day 1**: 汇报项目延期（埋下伏笔）。
-3.  **Day 2**: 应对老板责难（触发记忆联动）。
-4.  **复盘**: 自动提取长期洞察。
-
-### 方法二：手动 API 调用
-
-以下脚本可用于模拟一个真实的职场场景，体验系统的**记忆联动**和**局势感知**能力。
-
-### 场景设定：晋升期的 P6 vs 风险厌恶型老板
-
-**用户 ID**: `demo_user_001`
-
-#### 1. 初始化局势 (Setup Situation)
-
-首先告诉系统你的当前状态：处于晋升窗口期，老板不喜欢风险。
-
-```bash
-curl -X POST "http://localhost:8001/situation/update" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "user_id": "demo_user_001",
-    "situation": {
-      "career_type": "互联网大厂",
-      "current_level": "P6",
-      "target_level": "P7",
-      "promotion_window": true,
-      "boss_style": "风险厌恶型",
-      "current_phase": "冲刺期",
-      "personal_goal": "建立靠谱人设，争取晋升",
-      "recent_events": []
-    }
-  }'
-```
-
-#### 2. 第一天：建立防御基线 (Day 1)
-
-**事件**：项目因为第三方原因延期了，你需要汇报，但不能背锅。
-
-```bash
-curl -X POST "http://localhost:8001/advice/generate" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "user_id": "demo_user_001",
-    "fact": "项目A因为第三方API不稳定导致延期1天，但我上周五已经在周报里提示过这个风险了。"
-  }'
-```
-
-> **预期效果**：系统会建议你强调“风险已预警”，并生成话术：“正如上周五周报所述...”。系统会自动记下这个策略。
-
-#### 3. 第二天：遭遇责难 (Day 2)
-
-**事件**：老板在会上发火了，觉得项目失控。
-
-```bash
-curl -X POST "http://localhost:8001/advice/generate" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "user_id": "demo_user_001",
-    "fact": "今天早会老板因为项目A延期发火了，说进度不可控。"
-  }'
-```
-
-> **预期效果**：系统会检索到昨天的记忆（你已经预警过），建议你**不要当众辩解**，而是会后私发证据（周报截图），话术会非常委婉地“提醒”老板。
-
-#### 4. 触发记忆整理 (Consolidation)
-
-一周结束后，让系统总结这周的经验。
-
-```bash
-curl -X POST "http://localhost:8001/memory/demo_user_001/consolidate"
-```
-
-> **预期效果**：系统会生成一条长期洞察，例如：*“老板对进度延期极度敏感，对于非自身原因的延期，必须在前一周五留下书面预警证据，且在事发后通过私下渠道同步，避免公开对抗。”*
-
-#### 5. 查看所有记忆
-
-```bash
-curl "http://localhost:8001/memory/demo_user_001/all"
-```
-
-## 📖 API 概览
-
-详细接口文档请参考 [API_REFERENCE.md](./API_REFERENCE.md)。
-
-| 方法 | 路径 | 描述 |
-| :--- | :--- | :--- |
-| **POST** | `/situation/update` | 更新用户的职场局势（职级、老板风格等） |
-| **GET** | `/situation/{user_id}` | 获取当前局势配置 |
-| **POST** | `/advice/generate` | **核心接口**：输入今日事实，生成策略建议与话术 |
-| **POST** | `/memory/query` | 检索相关记忆 |
-| **POST** | `/memory/{user_id}/consolidate` | 触发长期记忆整理（提炼洞察） |
-| **GET** | `/memory/{user_id}/all` | 查看所有记忆 |
-| **DELETE** | `/memory/{user_id}/{id}` | 删除指定记忆 |
-
-## 🎭 职场模拟器补充：风险与性格校准
-
-模拟器接口会在每次 `/simulator/chat` 与 `/simulator/run` 返回中附带 `analysis` 字段，用于输出：
-1. 局势洞察与下一步动作建议
-2. 风险评判（触发条件/影响/缓解动作）
-3. 领导画像偏差分析与“举证式”论证，并在置信度足够时自动校准后续推演用的人设
+服务启动后：
+- **API 服务**: `http://localhost:8001`
+- **API 文档 (Swagger)**: `http://localhost:8001/docs`
 
 ## 📂 目录结构
 
 ```
-laishier-backend/
-├── data/               # 本地数据存储 (自动生成)
-│   ├── app.db          # SQLite 数据库: 存储用户局势 (Situation) 和结构化数据
-│   ├── history.db      # Mem0 历史记录: 记录记忆操作的日志
-│   └── qdrant/         # 向量数据库 (Vector Store): 存储记忆的语义向量 (Embeddings)
-├── logs/               # 系统日志
+BySideScheme_backend/
+├── data/               # [自动生成] 本地数据存储目录
+│   ├── app.db          # SQLite: 存储用户局势、画像版本等结构化数据
+│   ├── history.db      # Mem0: 记忆操作日志
+│   └── qdrant/         # Qdrant: 向量数据库文件
+├── logs/               # [自动生成] 系统运行日志
 ├── src/
-│   ├── api/            # FastAPI 路由与 Schema
-│   ├── core/           # 核心逻辑 (Memory, Decision, Generator, Logger)
-│   └── services/       # 业务逻辑编排
+│   ├── api/            # 路由定义 (Routes)
+│   ├── core/           # 核心逻辑 (LLM Client, Memory Manager)
+│   ├── services/       # 业务逻辑 (Simulator, Advisor)
+│   └── models/         # Pydantic 数据模型
 ├── main.py             # 程序入口
 ├── requirements.txt    # 依赖列表
-└── .env                # 配置文件
+└── .env                # [必须] 环境变量配置文件
 ```
 
-## 💾 数据存储详解 (Data Storage)
+## 🧪 测试与验证
 
-本项目坚持**隐私优先**，所有核心数据均存储在本地 `data/` 目录下，不依赖云端数据库。
+你可以使用提供的 Python 脚本进行全流程测试：
 
-1.  **`data/app.db` (SQLite)**
-    *   **用途**：存储应用的业务数据，目前主要是用户的“局势模型” (Situation Model)。
-    *   **内容**：包含用户的职级、老板风格、当前阶段等结构化 JSON 数据。这是 AI 进行决策的“前置上下文”。
+```bash
+# 运行演示脚本
+uv run demo_script.py
+```
 
-2.  **`data/qdrant/` (Vector Store)**
-    *   **用途**：向量数据库，是 AI 的“长期记忆体”。
-    *   **内容**：当您输入事实或生成策略时，系统会将文本转化为高维向量 (Embeddings) 存入此处。
-    *   **作用**：这使得系统能通过语义搜索（而非关键词匹配）找到相关的历史记忆。例如，搜索“老板发火”能关联到“上次项目延期”的记忆。
-
-3.  **`data/history.db` (SQLite)**
-    *   **用途**：Mem0 库的操作日志。
-    *   **内容**：记录了每一条记忆的创建、修改和删除历史，用于追踪记忆的演变过程。
-
-## 📝 开发日志
-
-- [x] 搭建 FastAPI 框架
-- [x] 集成 SiliconFlow LLM
-- [x] 实现基于 Mem0 的本地记忆系统
-- [x] 实现局势 (Situation) 持久化 (SQLite)
-- [x] 实现记忆整理与洞察提取 (Consolidation)
-- [x] 添加全链路日志监控
-
----
-*Stay safe and prosper in your workplace.*
+或者参考根目录下的 [API_REFERENCE.md](../API_REFERENCE.md) 使用 `curl` 或 Postman 进行手动测试。

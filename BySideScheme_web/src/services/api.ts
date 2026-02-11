@@ -71,7 +71,15 @@ export const clearMemories = async (userId: string) => {
 };
 
 // Simulator API
-import { SimulatorInitRequest, SimulatorInitResponse, ChatResponse } from '../types';
+import { 
+  SimulatorInitRequest, 
+  SimulatorInitResponse, 
+  ChatResponse, 
+  JobResponse, 
+  JobResultResponse, 
+  PersonaVersionsResponse, 
+  RollbackResponse 
+} from '../types';
 
 export const startSimulation = async (config: SimulatorInitRequest) => {
   const response = await api.post<SimulatorInitResponse>('/simulator/start', config);
@@ -90,5 +98,37 @@ export const chatSimulation = async (sessionId: string, message: string) => {
 
 export const resetSimulation = async (sessionId: string) => {
   const response = await api.delete(`/simulator/reset/${sessionId}`);
+  return response.data;
+};
+
+// Job API
+export const startChatJob = async (sessionId: string, message: string) => {
+  const response = await api.post<JobResponse>('/simulator/jobs/chat', { session_id: sessionId, message });
+  return response.data;
+};
+
+export const startRunJob = async (config: SimulatorRunRequest) => {
+  const response = await api.post<JobResponse>('/simulator/jobs/run', config);
+  return response.data;
+};
+
+export const getJobStatus = async (jobId: string) => {
+  const response = await api.get<JobResponse>(`/simulator/jobs/${jobId}/status`);
+  return response.data;
+};
+
+export const getJobResult = async (jobId: string) => {
+  const response = await api.get<JobResultResponse>(`/simulator/jobs/${jobId}/result`);
+  return response.data;
+};
+
+// Persona API
+export const getPersonaVersions = async (userId: string, personName: string) => {
+  const response = await api.get<PersonaVersionsResponse>(`/simulator/persona/${userId}/${personName}/versions`);
+  return response.data;
+};
+
+export const rollbackPersona = async (userId: string, personName: string, versionId: string) => {
+  const response = await api.post<RollbackResponse>(`/simulator/persona/${userId}/${personName}/rollback`, { persona_version_id: versionId });
   return response.data;
 };
