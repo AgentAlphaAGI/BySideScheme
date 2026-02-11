@@ -1,22 +1,13 @@
 from typing import Dict
-from openai import OpenAI
-import os
 import json
 from src.core.prompt_loader import PromptLoader
 from src.core.logger import logger
+from src.core.llm_client import LLMClientFactory
 
 class DecisionEngine:
     def __init__(self):
-        # 优先使用 SiliconFlow，如果未配置则回退到 OpenAI (或者根据需求强制)
-        if os.getenv("SILICONFLOW_API_KEY"):
-            self.client = OpenAI(
-                api_key=os.getenv("SILICONFLOW_API_KEY"),
-                base_url=os.getenv("SILICONFLOW_BASE_URL", "https://api.siliconflow.cn/v1")
-            )
-            self.model = os.getenv("SILICONFLOW_MODEL", "Pro/zai-org/GLM-4.7")
-        else:
-            self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-            self.model = "gpt-4o"
+        self.client, self.model = LLMClientFactory.create_client("DECISION_ENGINE")
+        logger.info(f"DecisionEngine initialized with model: {self.model}")
 
     def evaluate(self, fact: str, situation_context: str, memory_context: str) -> Dict:
         """

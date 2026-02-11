@@ -18,7 +18,7 @@ def print_response(response):
         print(response.text)
 
 def run_demo():
-    print("🤖 欢迎使用“来事儿”一键体验脚本")
+    print("🤖 欢迎使用“在旁术”一键体验脚本")
     print(f"📍 目标服务器: {BASE_URL}")
     print(f"👤 测试用户: {USER_ID}\n")
 

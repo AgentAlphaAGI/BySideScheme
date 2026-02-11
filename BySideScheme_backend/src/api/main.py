@@ -8,6 +8,7 @@ from src.api.schemas import FactInput, SituationUpdate, MemoryQuery
 from src.core.situation import SituationModel, Stakeholder
 from src.core.database import DatabaseManager
 from src.core.logger import logger
+from src.api.security import require_api_key
 import os
 from dotenv import load_dotenv
 import logging
@@ -59,20 +60,30 @@ async def lifespan(app: FastAPI):
     # Shutdown (if needed)
     logger.info("Application shutdown.")
 
-app = FastAPI(title="来事儿 (Lai Shi Er) API", version="1.0.0", lifespan=lifespan)
+app = FastAPI(title="在旁术 (BySideScheme) API", version="1.0.0", lifespan=lifespan)
+
+def _parse_cors_allow_origins() -> list[str]:
+    raw = os.getenv("CORS_ALLOW_ORIGINS", "*").strip()
+    if not raw:
+        return []
+    if raw == "*":
+        return ["*"]
+    origins = [o.strip() for o in raw.split(",") if o.strip()]
+    return origins
 
 # 配置 CORS
+allow_origins = _parse_cors_allow_origins()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # 允许所有来源，方便前端开发
-    allow_credentials=True,
+    allow_origins=allow_origins,
+    allow_credentials=False if allow_origins == ["*"] else True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 # 注册子路由
-app.include_router(simulator.router)
-app.include_router(feedback.router)
+app.include_router(simulator.router, dependencies=[Depends(require_api_key)])
+app.include_router(feedback.router, dependencies=[Depends(require_api_key)])
 
 def get_advisor_service():
     if not container.advisor_service:
@@ -83,10 +94,10 @@ def get_advisor_service():
 @app.get("/")
 async def root():
     logger.info("Root endpoint accessed.")
-    return {"message": "Welcome to Lai Shi Er API. Stay safe in the workplace!"}
+    return {"message": "Welcome to BySideScheme API. Stay safe in the workplace!"}
 
 @app.post("/situation/update")
-async def update_situation(input_data: SituationUpdate):
+async def update_situation(input_data: SituationUpdate, _: None = Depends(require_api_key)):
     """
     更新用户的职场局势模型
     """
@@ -95,7 +106,7 @@ async def update_situation(input_data: SituationUpdate):
     return {"message": "Situation updated successfully", "situation": input_data.situation}
 
 @app.get("/situation/{user_id}")
-async def get_situation(user_id: str):
+async def get_situation(user_id: str, _: None = Depends(require_api_key)):
     """
     获取用户的当前局势
     """
@@ -128,7 +139,11 @@ async def get_situation(user_id: str):
     return {"situation": situation}
 
 @app.post("/advice/generate")
-async def generate_advice(input_data: FactInput, service: AdvisorService = Depends(get_advisor_service)):
+async def generate_advice(
+    input_data: FactInput,
+    service: AdvisorService = Depends(get_advisor_service),
+    _: None = Depends(require_api_key),
+):
     """
     核心接口：输入今日事实，生成策略建议
     """
@@ -166,7 +181,7 @@ async def generate_advice(input_data: FactInput, service: AdvisorService = Depen
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/memory/query")
-async def query_memory(input_data: MemoryQuery):
+async def query_memory(input_data: MemoryQuery, _: None = Depends(require_api_key)):
     """
     查询用户记忆
     """
@@ -180,7 +195,7 @@ async def query_memory(input_data: MemoryQuery):
     return results
 
 @app.get("/memory/{user_id}/all")
-async def get_all_memories(user_id: str):
+async def get_all_memories(user_id: str, _: None = Depends(require_api_key)):
     """
     获取用户的所有记忆历史
     """
@@ -189,7 +204,7 @@ async def get_all_memories(user_id: str):
     return {"memories": memories}
 
 @app.delete("/memory/{user_id}/{memory_id}")
-async def delete_memory(user_id: str, memory_id: str):
+async def delete_memory(user_id: str, memory_id: str, _: None = Depends(require_api_key)):
     """
     删除单条记忆
     """
@@ -198,7 +213,7 @@ async def delete_memory(user_id: str, memory_id: str):
     return {"message": f"Memory {memory_id} deleted"}
 
 @app.delete("/memory/{user_id}")
-async def delete_all_memories(user_id: str):
+async def delete_all_memories(user_id: str, _: None = Depends(require_api_key)):
     """
     清空用户的所有记忆
     """
@@ -207,7 +222,7 @@ async def delete_all_memories(user_id: str):
     return {"message": f"All memories for user {user_id} deleted"}
 
 @app.delete("/situation/{user_id}")
-async def delete_situation(user_id: str):
+async def delete_situation(user_id: str, _: None = Depends(require_api_key)):
     """
     重置/删除用户局势
     """
@@ -216,7 +231,7 @@ async def delete_situation(user_id: str):
     return {"message": f"Situation for user {user_id} deleted"}
 
 @app.post("/memory/{user_id}/consolidate")
-async def consolidate_memories(user_id: str):
+async def consolidate_memories(user_id: str, _: None = Depends(require_api_key)):
     """
     触发记忆整理：将零散记忆归纳为长期洞察
     """

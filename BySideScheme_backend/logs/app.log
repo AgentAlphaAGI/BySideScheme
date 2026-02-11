@@ -377,3 +377,19 @@
 2026-02-10 21:24:14,295 - laishier - [INFO] - NarrativeGenerator initialized with SiliconFlow model: Pro/zai-org/GLM-4.7
 2026-02-10 21:24:14,295 - laishier - [INFO] - Services Initialized.
 2026-02-10 21:24:14,295 - laishier - [INFO] - Application startup complete.
+2026-02-11 11:03:23,297 - laishier - [INFO] - Database initialized at: :memory:
+2026-02-11 11:03:23,298 - laishier - [ERROR] - Error saving persona version for user u person boss: no such table: user_persona_versions
+Traceback (most recent call last):
+  File "/home/nyx/BySideScheme/BySideScheme_backend/src/core/database.py", line 149, in save_persona_version
+    cursor.execute(
+sqlite3.OperationalError: no such table: user_persona_versions
+2026-02-11 11:03:23,298 - laishier - [ERROR] - Error getting latest persona for user u person boss: no such table: user_persona_versions
+Traceback (most recent call last):
+  File "/home/nyx/BySideScheme/BySideScheme_backend/src/core/database.py", line 176, in get_latest_persona
+    cursor.execute(
+sqlite3.OperationalError: no such table: user_persona_versions
+2026-02-11 11:03:39,455 - laishier - [INFO] - Database initialized at: /tmp/tmpo1pl_zog.db
+2026-02-11 12:44:53,294 - laishier - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 12:44:53,362 - laishier - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 12:45:00,328 - laishier - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 12:45:00,356 - laishier - [INFO] - NarrativeGenerator initialized with model: qwen-plus

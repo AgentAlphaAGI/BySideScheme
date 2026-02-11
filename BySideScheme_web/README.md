@@ -1,6 +1,6 @@
-# 来事儿 (Lai Shi Er) - Web 前端
+# 在旁术 (BySideScheme) - Web 前端
 
-**来事儿** 职场策略助手的赛博朋克风格前端界面。
+**在旁术** 职场策略助手的赛博朋克风格前端界面。
 
 ## 🛠 技术栈
 
@@ -64,5 +64,5 @@ src/
 
 ## 🔌 后端集成
 
-本项目预期 **来事儿后端 (Lai Shi Er Backend)** 运行在 `http://localhost:8001`。
+本项目预期 **在旁术后端 (BySideScheme Backend)** 运行在 `http://localhost:8001`。
 在使用本应用前，请确保已启动后端服务。

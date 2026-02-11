@@ -1,22 +1,12 @@
-from openai import OpenAI
-import os
 import json
 from src.core.prompt_loader import PromptLoader
 from src.core.logger import logger
+from src.core.llm_client import LLMClientFactory
 
 class NarrativeGenerator:
     def __init__(self):
-        if os.getenv("SILICONFLOW_API_KEY"):
-            self.client = OpenAI(
-                api_key=os.getenv("SILICONFLOW_API_KEY"),
-                base_url=os.getenv("SILICONFLOW_BASE_URL", "https://api.siliconflow.cn/v1")
-            )
-            self.model = os.getenv("SILICONFLOW_MODEL", "Pro/zai-org/GLM-4.7")
-            logger.info(f"NarrativeGenerator initialized with SiliconFlow model: {self.model}")
-        else:
-            self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-            self.model = "gpt-4o"
-            logger.info("NarrativeGenerator initialized with OpenAI model: gpt-4o")
+        self.client, self.model = LLMClientFactory.create_client("NARRATIVE_ENGINE")
+        logger.info(f"NarrativeGenerator initialized with model: {self.model}")
 
     def generate(self, fact: str, decision: dict, situation_context: str, memory_context: str) -> dict:
         """

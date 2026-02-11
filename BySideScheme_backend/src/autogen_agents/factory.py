@@ -10,13 +10,29 @@ class AgentFactory:
         self.memory_manager = MemoryManager()
         
         # 配置 LLM Config
-        self.llm_config = self._get_llm_config()
+        self.llm_config = self.build_llm_config()
 
-    def _get_llm_config(self):
+    def _get_engine_env(self, engine: str) -> tuple[str | None, str | None, str | None]:
+        prefix = engine.upper()
+        api_key = os.getenv(f"{prefix}_API_KEY")
+        base_url = os.getenv(f"{prefix}_BASE_URL")
+        model = os.getenv(f"{prefix}_MODEL")
+        return api_key, base_url, model
+
+    def build_llm_config(self, engine: str | None = None) -> dict:
         # 优先使用 SiliconFlow
         api_key = os.getenv("SILICONFLOW_API_KEY")
         base_url = os.getenv("SILICONFLOW_BASE_URL", "https://api.siliconflow.cn/v1")
         model = os.getenv("SILICONFLOW_MODEL", "Pro/zai-org/GLM-4.7")
+
+        if engine:
+            e_key, e_base, e_model = self._get_engine_env(engine)
+            if e_key:
+                api_key = e_key
+            if e_model:
+                model = e_model
+            if e_base:
+                base_url = e_base
         
         # 构造 config_list
         config_list = []
@@ -46,15 +62,10 @@ class AgentFactory:
             "timeout": 120,
         }
 
-    def create_leader_agent(self, name: str, title: str, persona: str) -> MemoryAwareAssistantAgent:
-        """
-        创建一个领导/上级 Agent
-        :param name: 名字
-        :param title: 职位/头衔 (如: 直属领导, 部门总监, 经理)
-        :param persona: 人设/性格描述
-        """
-        system_message = f"""你是一个公司的{title}，名字叫 {name}。
-        你的性格/管理风格是：{persona}。
+    def build_leader_system_message(self, name: str, title: str, persona: str, persona_notes: str = "") -> str:
+        notes = f"\n\n【近期观察与校准】\n{persona_notes}\n" if persona_notes else ""
+        return f"""你是一个公司的{title}，名字叫 {name}。
+        你的性格/管理风格是：{persona}。{notes}
         
         【你的角色】：
         1. 你是用户（User/Me）的上级或更高层领导。
@@ -66,14 +77,23 @@ class AgentFactory:
         2. 当涉及到过去的对话或决策时，请调用你的记忆。
         3. 如果有其他领导在场，请注意职场礼仪和层级关系。
         """
+
+    def create_leader_agent(self, name: str, title: str, persona: str, engine: str | None = None) -> MemoryAwareAssistantAgent:
+        """
+        创建一个领导/上级 Agent
+        :param name: 名字
+        :param title: 职位/头衔 (如: 直属领导, 部门总监, 经理)
+        :param persona: 人设/性格描述
+        """
+        system_message = self.build_leader_system_message(name=name, title=title, persona=persona)
         return MemoryAwareAssistantAgent(
             name=name,
             system_message=system_message,
             memory_manager=self.memory_manager,
-            llm_config=self.llm_config
+            llm_config=self.build_llm_config(engine)
         )
 
-    def create_colleague_agent(self, name: str, persona: str) -> MemoryAwareAssistantAgent:
+    def create_colleague_agent(self, name: str, persona: str, engine: str | None = None) -> MemoryAwareAssistantAgent:
         """创建一个同事 Agent"""
         system_message = f"""你是一个职场同事，名字叫 {name}。
         你的性格是：{persona}。
@@ -85,10 +105,10 @@ class AgentFactory:
             name=name,
             system_message=system_message,
             memory_manager=self.memory_manager,
-            llm_config=self.llm_config
+            llm_config=self.build_llm_config(engine)
         )
 
-    def create_boss_agent(self, name: str, style: str) -> MemoryAwareAssistantAgent:
+    def create_boss_agent(self, name: str, style: str, engine: str | None = None) -> MemoryAwareAssistantAgent:
         """创建一个领导 Agent"""
         system_message = f"""你是一个公司领导，名字叫 {name}。
         你的管理风格是：{style}。
@@ -100,5 +120,5 @@ class AgentFactory:
             name=name,
             system_message=system_message,
             memory_manager=self.memory_manager,
-            llm_config=self.llm_config
+            llm_config=self.build_llm_config(engine)
         )

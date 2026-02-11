@@ -48,6 +48,24 @@ class DatabaseManager:
                         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                     )
                 """)
+
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS user_persona_versions (
+                        id TEXT PRIMARY KEY,
+                        user_id TEXT NOT NULL,
+                        person_name TEXT NOT NULL,
+                        person_title TEXT,
+                        persona TEXT NOT NULL,
+                        deviation_summary TEXT,
+                        confidence REAL,
+                        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                    )
+                """)
+
+                cursor.execute("""
+                    CREATE INDEX IF NOT EXISTS idx_user_persona_versions_lookup
+                    ON user_persona_versions (user_id, person_name, created_at)
+                """)
                 conn.commit()
         except sqlite3.Error as e:
             logger.error(f"Database initialization error: {e}", exc_info=True)
@@ -114,3 +132,134 @@ class DatabaseManager:
             logger.debug(f"Deleted situation for user {user_id}")
         except sqlite3.Error as e:
             logger.error(f"Error deleting situation for user {user_id}: {e}", exc_info=True)
+
+    def save_persona_version(
+        self,
+        persona_id: str,
+        user_id: str,
+        person_name: str,
+        persona: str,
+        person_title: str = "",
+        deviation_summary: str = "",
+        confidence: float = 0.0,
+    ):
+        try:
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute(
+                    """
+                    INSERT INTO user_persona_versions
+                    (id, user_id, person_name, person_title, persona, deviation_summary, confidence, created_at)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+                    """,
+                    (
+                        persona_id,
+                        user_id,
+                        person_name,
+                        person_title,
+                        persona,
+                        deviation_summary,
+                        confidence,
+                    ),
+                )
+                conn.commit()
+        except sqlite3.Error as e:
+            logger.error(
+                f"Error saving persona version for user {user_id} person {person_name}: {e}",
+                exc_info=True,
+            )
+
+    def get_latest_persona(self, user_id: str, person_name: str) -> Optional[Dict[str, Any]]:
+        try:
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute(
+                    """
+                    SELECT id, person_title, persona, deviation_summary, confidence, created_at
+                    FROM user_persona_versions
+                    WHERE user_id = ? AND person_name = ?
+                    ORDER BY created_at DESC
+                    LIMIT 1
+                    """,
+                    (user_id, person_name),
+                )
+                row = cursor.fetchone()
+                if not row:
+                    return None
+                return {
+                    "id": row[0],
+                    "person_title": row[1],
+                    "persona": row[2],
+                    "deviation_summary": row[3],
+                    "confidence": row[4],
+                    "created_at": row[5],
+                }
+        except sqlite3.Error as e:
+            logger.error(
+                f"Error getting latest persona for user {user_id} person {person_name}: {e}",
+                exc_info=True,
+            )
+            return None
+
+    def list_persona_versions(self, user_id: str, person_name: str, limit: int = 50) -> list[Dict[str, Any]]:
+        try:
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute(
+                    """
+                    SELECT id, person_title, persona, deviation_summary, confidence, created_at
+                    FROM user_persona_versions
+                    WHERE user_id = ? AND person_name = ?
+                    ORDER BY created_at DESC
+                    LIMIT ?
+                    """,
+                    (user_id, person_name, limit),
+                )
+                rows = cursor.fetchall()
+                return [
+                    {
+                        "id": r[0],
+                        "person_title": r[1],
+                        "persona": r[2],
+                        "deviation_summary": r[3],
+                        "confidence": r[4],
+                        "created_at": r[5],
+                    }
+                    for r in rows
+                ]
+        except sqlite3.Error as e:
+            logger.error(
+                f"Error listing persona versions for user {user_id} person {person_name}: {e}",
+                exc_info=True,
+            )
+            return []
+
+    def get_persona_version(self, persona_id: str) -> Optional[Dict[str, Any]]:
+        try:
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                cursor.execute(
+                    """
+                    SELECT id, user_id, person_name, person_title, persona, deviation_summary, confidence, created_at
+                    FROM user_persona_versions
+                    WHERE id = ?
+                    LIMIT 1
+                    """,
+                    (persona_id,),
+                )
+                row = cursor.fetchone()
+                if not row:
+                    return None
+                return {
+                    "id": row[0],
+                    "user_id": row[1],
+                    "person_name": row[2],
+                    "person_title": row[3],
+                    "persona": row[4],
+                    "deviation_summary": row[5],
+                    "confidence": row[6],
+                    "created_at": row[7],
+                }
+        except sqlite3.Error as e:
+            logger.error(f"Error getting persona version {persona_id}: {e}", exc_info=True)
+            return None

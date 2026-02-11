@@ -25,7 +25,7 @@ def main():
         return
 
     print("==================================================")
-    print(f"   来事儿 (Laishier) - Real Demo")
+    print(f"   在旁术 (Laishier) - Real Demo")
     print(f"   Provider: {'SiliconFlow' if silicon_key else 'OpenAI'}")
     print("==================================================")
     

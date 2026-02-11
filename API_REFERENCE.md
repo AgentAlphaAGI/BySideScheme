@@ -1,4 +1,4 @@
-# 来事儿 (Lai Shi Er) API 文档
+# 在旁术 (BySideScheme) API 文档
 
 本文档详细描述了后端服务提供的所有 API 接口、请求参数及响应示例。
 
@@ -7,11 +7,45 @@
 - **Base URL**: `http://localhost:8001`
 - **Content-Type**: `application/json`
 
+## 鉴权（可选）
+
+本服务支持可选的 API Key 鉴权：
+- 若服务端未设置 `LAISHIER_API_KEY`（或为空），接口默认不校验鉴权
+- 若服务端设置了 `LAISHIER_API_KEY`，则所有 HTTP 请求需要携带请求头 `X-API-Key: <LAISHIER_API_KEY>`，否则返回 401
+
+WebSocket 也同样：握手阶段需携带 `X-API-Key`（当服务端开启校验时）。
+
+## 通用错误格式
+
+FastAPI 默认错误格式示例：
+
+```json
+{ "detail": "..." }
+```
+
 ---
 
 ## 🎭 职场模拟器 (Simulator)
 
 基于 AutoGen 多智能体框架，模拟真实的职场人际交互环境。
+
+补充能力：
+1. 可在 `people[].engine` 为不同人物指定不同模型（如 deepseek/qwen3/glm），提升并发吞吐与角色差异性
+2. 若传入 `user_id`，系统会在推演中持久化“画像校准”，并在后续会话启动时自动加载最新画像
+3. 若传入 `situation` 或已通过 `/situation/update` 保存局势（并在请求中传 `user_id`），`analysis` 会把局势纳入风险与策略判断
+
+### 数据结构说明
+
+**人物动态加载（people）**
+- `people[]` 是推荐方式（可同时包含 leader/colleague），字段：
+  - `kind`: `"leader"` | `"colleague"`
+  - `name`: 人物名称（用于对话发言者标识、画像版本存取 key）
+  - `title`: 头衔（leader 建议填写；colleague 可为空字符串）
+  - `persona`: 初始画像文本
+  - `engine`: 角色使用的模型引擎名（如 `"deepseek"` / `"qwen3"` / `"glm"`），用于从环境变量读取对应 `{ENGINE}_API_KEY/{ENGINE}_BASE_URL/{ENGINE}_MODEL`。如果不填，默认使用系统配置的通用模型。
+
+**局势（situation）**
+- 可选，结构与 `/situation/update` 的 `situation` 一致；若不传且传了 `user_id`，服务端会从数据库加载已保存的局势。
 
 ### 10. 初始化模拟会话
 **POST** `/simulator/start`
@@ -22,7 +56,31 @@
 
 ```json
 {
+  "user_id": "demo_user_001",
   "user_name": "Me",
+  "people": [
+    {
+      "kind": "leader",
+      "name": "David",
+      "title": "直属领导",
+      "persona": "控制欲强，喜欢听好话，但关键时刻能扛事。口头禅是'抓手'、'赋能'。",
+      "engine": "deepseek"
+    },
+    {
+      "kind": "leader",
+      "name": "Sarah",
+      "title": "部门总监",
+      "persona": "结果导向，雷厉风行，不喜欢听借口，只看数据。",
+      "engine": "qwen3"
+    },
+    {
+      "kind": "colleague",
+      "name": "Alex",
+      "title": "",
+      "persona": "谨慎务实，擅长补充细节，喜欢把事情拆成可执行清单。",
+      "engine": "glm"
+    }
+  ],
   "leaders": [
     {
       "name": "David",
@@ -76,7 +134,26 @@
       "content": "数据呢？我需要看到ROI的预测。",
       "role": "assistant"
     }
-  ]
+  ],
+  "analysis": {
+    "situation_insights": [
+      "两位领导关注点不同：David 关注抓手/执行，Sarah 关注数据/ROI。"
+    ],
+    "overall_risk_score": 55,
+    "risks": [
+      {
+        "title": "指标与方案未对齐",
+        "severity": "medium",
+        "trigger": "继续讨论方案细节但不给出量化 ROI 或里程碑",
+        "impact": "决策被拖延，或被认为准备不足",
+        "evidence": ["Sarah: 数据呢？我需要看到ROI的预测。"],
+        "mitigation": ["补一页ROI假设与敏感性分析", "给出里程碑与抓手清单"]
+      }
+    ],
+    "persona_updates": [],
+    "next_actions": ["先确认 ROI 口径与时间表，再展开实现方案细节"],
+    "uncertainties": []
+  }
 }
 ```
 
@@ -94,7 +171,24 @@
 
 ```json
 {
+  "user_id": "demo_user_001",
   "user_name": "Me",
+  "people": [
+    {
+      "kind": "leader",
+      "name": "David",
+      "title": "直属领导",
+      "persona": "控制欲强，喜欢听好话，但关键时刻能扛事。",
+      "engine": "deepseek"
+    },
+    {
+      "kind": "leader",
+      "name": "Sarah",
+      "title": "部门总监",
+      "persona": "结果导向，雷厉风行，不喜欢听借口。",
+      "engine": "qwen3"
+    }
+  ],
   "leaders": [
     {
       "name": "David",
@@ -128,7 +222,181 @@
       "role": "assistant"
     },
     ...
+  ],
+  "analysis": {
+    "overall_risk_score": 75,
+    "risks": [],
+    "persona_updates": [],
+    "situation_insights": [],
+    "next_actions": [],
+    "uncertainties": []
+  }
+}
+```
+
+### 14. 任务化推演：启动单轮对话作业（Job）
+**POST** `/simulator/jobs/chat`
+
+把一次 `/simulator/chat` 变为后台作业，返回 `job_id`，便于轮询状态、获取结果或流式订阅输出。
+
+**请求体 (JSON):**
+
+```json
+{
+  "session_id": "550e8400-e29b-41d4-a716-446655440000",
+  "message": "我想把上线时间从周五调整到下周三，原因是关键依赖方不稳定。你们怎么看？"
+}
+```
+
+**响应示例:**
+
+```json
+{
+  "job_id": "a2f7c0c0-1111-2222-3333-444455556666",
+  "status": "pending",
+  "session_id": "550e8400-e29b-41d4-a716-446655440000",
+  "created_at": 1730000000.0,
+  "updated_at": 1730000000.0
+}
+```
+
+### 15. 任务化推演：启动完整场景作业（Job）
+**POST** `/simulator/jobs/run`
+
+等价于 `/simulator/run`，但以后台作业执行，并返回 `job_id`（同时返回新创建的 `session_id`）。
+
+**请求体 (JSON):**
+
+```json
+{
+  "user_id": "demo_user_001",
+  "user_name": "Me",
+  "people": [
+    { "kind": "leader", "name": "David", "title": "直属领导", "persona": "控制欲强", "engine": "deepseek" }
+  ],
+  "scenario": "向领导汇报：上线要延期一周。",
+  "max_rounds": 10
+}
+```
+
+### 16. 查询作业状态
+**GET** `/simulator/jobs/{job_id}/status`
+
+**响应示例:**
+
+```json
+{
+  "job_id": "a2f7c0c0-1111-2222-3333-444455556666",
+  "status": "running",
+  "session_id": "550e8400-e29b-41d4-a716-446655440000",
+  "error": null,
+  "created_at": 1730000000.0,
+  "updated_at": 1730000002.0
+}
+```
+
+### 17. 获取作业结果
+**GET** `/simulator/jobs/{job_id}/result`
+
+返回字段包含：
+- `messages`: 已生成的消息（会随作业运行逐步累积）
+- `analysis`: 作业完成后的结构化洞察（风险/画像偏差/下一步动作等）
+
+**响应示例:**
+
+```json
+{
+  "job_id": "a2f7c0c0-1111-2222-3333-444455556666",
+  "session_id": "550e8400-e29b-41d4-a716-446655440000",
+  "status": "completed",
+  "messages": [
+    { "sender": "David", "content": "抓手是什么？", "role": "assistant" }
+  ],
+  "analysis": { "overall_risk_score": 55, "risks": [], "persona_updates": [], "situation_insights": [], "next_actions": [], "uncertainties": [] },
+  "error": null
+}
+```
+
+### 18. SSE 流式订阅作业输出
+**GET** `/simulator/jobs/{job_id}/stream`
+
+返回 `text/event-stream`，事件类型：
+- `status`: 作业状态变更
+- `message`: 新消息
+- `analysis`: 最终洞察
+- `done`: 结束
+
+示例（可选加 `-H "X-API-Key: ..."`）：
+
+```bash
+curl -N "http://localhost:8001/simulator/jobs/<job_id>/stream"
+```
+
+**SSE 事件示例（片段）**：
+
+```
+event: status
+data: {"job_id":"...","status":"running"}
+
+event: message
+data: {"sender":"David","content":"抓手是什么？","role":"assistant"}
+
+event: analysis
+data: {"overall_risk_score":55,"risks":[],"persona_updates":[],"situation_insights":[],"next_actions":[],"uncertainties":[]}
+
+event: done
+data: {}
+```
+
+### 19. WebSocket 流式订阅作业输出
+**WS** `/simulator/jobs/{job_id}/ws`
+
+客户端需在握手时携带 `X-API-Key` header（当服务端开启 API Key 校验时）。
+
+**消息格式**
+- `{"type":"status","job_id":"...","status":"running"}`
+- `{"type":"message","data":{...}}`
+- `{"type":"analysis","data":{...}}`
+- `{"type":"error","error":"..."}` 或 `{"type":"error","detail":"..."}`
+- `{"type":"done"}`
+
+### 20. Persona 版本回溯：列出版本
+**GET** `/simulator/persona/{user_id}/{person_name}/versions?limit=50`
+
+**响应示例:**
+
+```json
+{
+  "versions": [
+    {
+      "id": "persona-version-id",
+      "person_title": "直属领导",
+      "persona": "更新后的画像...",
+      "deviation_summary": "偏差举证与论证...",
+      "confidence": 0.82,
+      "created_at": "2026-02-11 11:00:00"
+    }
   ]
+}
+```
+
+### 21. Persona 版本回溯：回滚到指定版本
+**POST** `/simulator/persona/{user_id}/{person_name}/rollback`
+
+**请求体 (JSON):**
+
+```json
+{
+  "persona_version_id": "the-version-id-to-rollback"
+}
+```
+
+**响应示例:**
+
+```json
+{
+  "rolled_back_to": "the-version-id-to-rollback",
+  "new_version_id": "new-version-id"
 }
 ```
 
