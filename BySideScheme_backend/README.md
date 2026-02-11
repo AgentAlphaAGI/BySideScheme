@@ -65,7 +65,7 @@ cp .env.example .env
 # ==========================================
 # API 访问密钥。设置后，前端请求 Header 必须携带 X-API-Key: your-secret-key
 # 如果留空，则不开启鉴权（仅限本地开发使用）
-LAISHIER_API_KEY=
+BySideScheme_API_KEY=
 
 # ==========================================
 # 2. 模型引擎配置 (至少配置一组)

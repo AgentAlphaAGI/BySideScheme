@@ -178,7 +178,7 @@
 目标：保证“默认本地优先”，并避免被外部滥用。
 需求：
 - 可选 API Key 鉴权：
-  - 未设置 LAISHIER_API_KEY：不校验
+  - 未设置 BySideScheme_API_KEY：不校验
   - 设置后：HTTP 与 WS 均需要 X-API-Key
 - 不在日志中输出密钥
 - 数据落盘位置明确（data/ + logs/），并默认加入 gitignore
@@ -195,7 +195,7 @@
 - 支持为不同角色指定不同 engine 前缀环境变量（如 DEEPSEEK_*、QWEN3_*、GLM_*）
 
 ### 6.2 环境变量（概念）
-- LAISHIER_API_KEY：可选 API 访问密钥
+- BySideScheme_API_KEY：可选 API 访问密钥
 - DECISION_ENGINE：指定决策层（Advisor）使用的引擎前缀（默认：SILICONFLOW/OPENAI）
 - NARRATIVE_ENGINE：指定话术生成层（Generator）使用的引擎前缀（默认：SILICONFLOW/OPENAI）
 - SIMULATOR_INSIGHTS_ENGINE：指定洞察层使用的引擎前缀（默认：SILICONFLOW/OPENAI）
@@ -231,5 +231,5 @@
 5. simulator/jobs/chat 创建 job，status 从 pending→running→completed，result.messages 逐步累积
 6. SSE 订阅能收到 message 事件与最终 analysis
 7. persona versions 可列出，rollback 后 latest persona 变为回滚内容
-8. 配置 LAISHIER_API_KEY 后，未带 header 的 HTTP/WS 请求被拒绝
+8. 配置 BySideScheme_API_KEY 后，未带 header 的 HTTP/WS 请求被拒绝
 

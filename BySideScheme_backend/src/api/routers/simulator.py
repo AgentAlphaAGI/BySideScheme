@@ -265,11 +265,16 @@ class SimulationSession:
                 continue
             title = self.leader_titles.get(name, "领导")
             agent = self.leader_agents[name]
-            agent.system_message = self.factory.build_leader_system_message(
-                name=name,
-                title=title,
-                persona=updated_persona,
-                persona_notes=deviation_summary,
+            # MemoryAwareAssistantAgent (and AutoGen agents) store system_message in ._oai_system_message 
+            # or simply use update_system_message() method if available, or recreate the agent.
+            # AutoGen ConversableAgent has update_system_message method.
+            agent.update_system_message(
+                self.factory.build_leader_system_message(
+                    name=name,
+                    title=title,
+                    persona=updated_persona,
+                    persona_notes=deviation_summary,
+                )
             )
 
             for leader in self.leaders:

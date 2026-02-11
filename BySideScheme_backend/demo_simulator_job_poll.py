@@ -10,7 +10,7 @@ def _request_json(method: str, url: str, payload: dict | None = None) -> dict:
         data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
     req = urllib.request.Request(url, data=data, method=method)
     req.add_header("Content-Type", "application/json")
-    api_key = os.getenv("LAISHIER_API_KEY")
+    api_key = os.getenv("BySideScheme_API_KEY")
     if api_key:
         req.add_header("X-API-Key", api_key)
     with urllib.request.urlopen(req, timeout=60) as resp:

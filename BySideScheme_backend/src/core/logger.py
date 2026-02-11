@@ -3,7 +3,7 @@ import os
 from logging.handlers import RotatingFileHandler
 import sys
 
-def setup_logger(name: str = "laishier", log_level: int = logging.INFO):
+def setup_logger(name: str = "BySideScheme", log_level: int = logging.INFO):
     """
     配置并返回一个 logger 实例
     - 同时输出到控制台和文件

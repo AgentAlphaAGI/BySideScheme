@@ -25,7 +25,7 @@ def main():
         return
 
     print("==================================================")
-    print(f"   在旁术 (Laishier) - Real Demo")
+    print(f"   在旁术 (BySideScheme) - Real Demo")
     print(f"   Provider: {'SiliconFlow' if silicon_key else 'OpenAI'}")
     print("==================================================")
     
@@ -62,7 +62,7 @@ def main():
     # 2. 初始化服务 (使用真实组件)
     print("\n>>> 2. 系统初始化...")
     try:
-        # MemoryManager 会自动使用本地持久化存储 (laishier-backend/data)
+        # MemoryManager 会自动使用本地持久化存储 (BySideScheme-backend/data)
         memory_manager = MemoryManager()
         decision_engine = DecisionEngine()
         narrative_generator = NarrativeGenerator()

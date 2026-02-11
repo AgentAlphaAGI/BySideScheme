@@ -5,7 +5,7 @@ from fastapi import Header, HTTPException
 
 
 def verify_api_key(x_api_key: Optional[str]) -> None:
-    expected = os.getenv("LAISHIER_API_KEY")
+    expected = os.getenv("BySideScheme_API_KEY")
     if not expected:
         return
     if x_api_key != expected:

@@ -18,7 +18,7 @@ export const useUserStore = create<UserState>()(
       setSituation: (situation) => set({ situation }),
     }),
     {
-      name: 'laishier-storage',
+      name: 'BySideScheme-storage',
     }
   )
 );

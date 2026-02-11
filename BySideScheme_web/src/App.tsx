@@ -6,6 +6,7 @@ import Advisor from './pages/Advisor';
 import Memory from './pages/Memory';
 import Profile from './pages/Profile';
 import Simulator from './pages/Simulator';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const App: React.FC = () => {
   return (
@@ -14,7 +15,11 @@ const App: React.FC = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path="advisor" element={<Advisor />} />
-          <Route path="simulator" element={<Simulator />} />
+          <Route path="simulator" element={
+            <ErrorBoundary>
+              <Simulator />
+            </ErrorBoundary>
+          } />
           <Route path="memory" element={<Memory />} />
           <Route path="profile" element={<Profile />} />
         </Route>

@@ -10,8 +10,8 @@
 ## 鉴权（可选）
 
 本服务支持可选的 API Key 鉴权：
-- 若服务端未设置 `LAISHIER_API_KEY`（或为空），接口默认不校验鉴权
-- 若服务端设置了 `LAISHIER_API_KEY`，则所有 HTTP 请求需要携带请求头 `X-API-Key: <LAISHIER_API_KEY>`，否则返回 401
+- 若服务端未设置 `BySideScheme_API_KEY`（或为空），接口默认不校验鉴权
+- 若服务端设置了 `BySideScheme_API_KEY`，则所有 HTTP 请求需要携带请求头 `X-API-Key: <BySideScheme_API_KEY>`，否则返回 401
 
 WebSocket 也同样：握手阶段需携带 `X-API-Key`（当服务端开启校验时）。
 

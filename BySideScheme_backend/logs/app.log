@@ -393,3 +393,276 @@ sqlite3.OperationalError: no such table: user_persona_versions
 2026-02-11 12:44:53,362 - laishier - [INFO] - DecisionEngine initialized with model: deepseek-chat
 2026-02-11 12:45:00,328 - laishier - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
 2026-02-11 12:45:00,356 - laishier - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 14:33:17,527 - laishier - [INFO] - Initializing Services...
+2026-02-11 14:33:17,527 - laishier - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 14:33:17,548 - laishier - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 14:33:17,792 - laishier - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 14:33:17,795 - laishier - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 14:33:17,796 - laishier - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 14:33:17,799 - laishier - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 14:33:17,799 - laishier - [INFO] - Services Initialized.
+2026-02-11 14:33:17,799 - laishier - [INFO] - Application startup complete.
+2026-02-11 14:54:38,169 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-11 14:54:38,171 - laishier - [WARNING] - No situation found for user nyx, using default.
+2026-02-11 14:54:38,176 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-11 14:54:38,178 - laishier - [WARNING] - No situation found for user nyx, using default.
+2026-02-11 14:54:45,435 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-11 14:54:45,435 - laishier - [WARNING] - No situation found for user nyx, using default.
+2026-02-11 14:54:45,438 - laishier - [INFO] - Fetching situation for user: nyx
+2026-02-11 14:54:45,438 - laishier - [WARNING] - No situation found for user nyx, using default.
+2026-02-11 14:56:41,753 - laishier - [INFO] - Updating situation for user: nyx
+2026-02-11 15:11:26,011 - laishier - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:11:26,012 - laishier - [WARNING] - No situation found for user 小松, using default.
+2026-02-11 15:11:46,799 - laishier - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:11:46,800 - laishier - [WARNING] - No situation found for user 小松, using default.
+2026-02-11 15:11:46,806 - laishier - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:11:46,806 - laishier - [WARNING] - No situation found for user 小松, using default.
+2026-02-11 15:12:02,564 - laishier - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:12:02,564 - laishier - [WARNING] - No situation found for user 小松, using default.
+2026-02-11 15:12:02,568 - laishier - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:12:02,569 - laishier - [WARNING] - No situation found for user 小松, using default.
+2026-02-11 15:14:01,405 - laishier - [INFO] - Updating situation for user: 小松
+2026-02-11 15:14:05,867 - laishier - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:14:05,870 - laishier - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:14:18,293 - laishier - [INFO] - Generating advice for user 小松. Fact: "Jessica 催着'天网'项目上线，但我发现依赖的第三方...
+2026-02-11 15:14:18,293 - laishier - [INFO] - [小松] Processing daily input: "Jessica 催着'天网'项目上线，但我发现依赖的第三方服务商 X 很不稳定，SLA 只有 99...
+2026-02-11 15:14:44,816 - laishier - [INFO] - [小松] Added new memories from generated advice.
+2026-02-11 15:14:44,816 - laishier - [INFO] - Advice generated successfully for user 小松
+2026-02-11 15:15:08,188 - laishier - [INFO] - Fetching all memories for user 小松
+2026-02-11 15:15:08,196 - laishier - [INFO] - Fetching all memories for user 小松
+2026-02-11 15:15:14,164 - laishier - [INFO] - Generating advice for user 小松. Fact: "虽然 David 说不用做降级，但我今晚加班偷偷把降级开关...
+2026-02-11 15:15:14,165 - laishier - [INFO] - [小松] Processing daily input: "虽然 David 说不用做降级，但我今晚加班偷偷把降级开关（Plan B）写进代码里了，配置只要一...
+2026-02-11 15:15:41,862 - laishier - [INFO] - [小松] Added new memories from generated advice.
+2026-02-11 15:15:41,863 - laishier - [INFO] - Advice generated successfully for user 小松
+2026-02-11 15:16:39,469 - laishier - [INFO] - Fetching all memories for user 小松
+2026-02-11 15:16:39,475 - laishier - [INFO] - Fetching all memories for user 小松
+2026-02-11 15:17:37,613 - laishier - [INFO] - Application shutdown.
+2026-02-11 15:17:39,155 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 15:17:39,156 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 15:17:39,156 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 15:17:39,256 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 15:17:39,260 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 15:17:39,260 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 15:17:39,263 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 15:17:39,263 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 15:17:39,263 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 15:17:40,442 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 15:17:40,442 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 15:17:40,442 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 15:17:40,503 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 15:17:40,506 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 15:17:40,506 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 15:17:40,509 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 15:17:40,509 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 15:17:40,509 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 15:17:44,656 - BySideScheme - [INFO] - Fetching all memories for user demo_user_001
+2026-02-11 15:17:44,662 - BySideScheme - [INFO] - Fetching all memories for user demo_user_001
+2026-02-11 15:17:49,785 - BySideScheme - [INFO] - Fetching all memories for user demo_user_001
+2026-02-11 15:17:49,789 - BySideScheme - [INFO] - Fetching all memories for user demo_user_001
+2026-02-11 15:17:50,517 - BySideScheme - [INFO] - Fetching situation for user: demo_user_001
+2026-02-11 15:17:50,517 - BySideScheme - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-11 15:17:50,519 - BySideScheme - [INFO] - Fetching situation for user: demo_user_001
+2026-02-11 15:17:50,519 - BySideScheme - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-11 15:17:58,087 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:18:05,296 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:18:05,299 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:18:06,311 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 15:18:06,315 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 15:23:35,010 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:23:35,015 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:23:38,185 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:23:38,188 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:23:38,969 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 15:23:38,972 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 15:25:35,688 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:25:35,691 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:25:37,117 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:25:37,122 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:25:38,184 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 15:25:38,188 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 15:25:42,563 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 15:25:42,565 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 15:25:45,667 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 15:25:47,639 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 15:25:56,852 - BySideScheme - [INFO] - Using configured engine 'deepseek' for SIMULATOR_INSIGHTS_ENGINE
+2026-02-11 15:25:56,856 - BySideScheme - [INFO] - SimulatorInsightsEngine initialized with model: deepseek-chat
+2026-02-11 15:25:56,856 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 15:25:56,893 - BySideScheme - [INFO] - Created new simulation session: a8cf40d6-01c4-4868-bd60-d267cff6fdc2
+2026-02-11 15:26:11,013 - BySideScheme - [INFO] - Session a8cf40d6-01c4-4868-bd60-d267cff6fdc2: User sending message: "Jessica，你现在提的这个改动涉及核心订单状态机。周五改这个风险太大，一旦出问题会影响周末的单量。我建议放到下个版本迭代。"
+2026-02-11 15:27:18,127 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:27:18,131 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:27:52,358 - BySideScheme - [INFO] - [David] Found relevant memories: - 建议将改动放到下个版本迭代，因为周五修改风险太大，可能会影响周末的单量
+- Jessica 提议的改动涉及核心订单状态机
+2026-02-11 15:33:43,151 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:33:43,154 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 15:33:43,235 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 15:33:43,241 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 15:33:50,704 - BySideScheme - [INFO] - Using configured engine 'deepseek' for SIMULATOR_INSIGHTS_ENGINE
+2026-02-11 15:33:50,708 - BySideScheme - [INFO] - SimulatorInsightsEngine initialized with model: deepseek-chat
+2026-02-11 15:33:50,708 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 15:33:50,738 - BySideScheme - [INFO] - Created new simulation session: 08e99d5d-17f3-448b-ad78-5d35e127866c
+2026-02-11 15:34:10,069 - BySideScheme - [INFO] - Session 08e99d5d-17f3-448b-ad78-5d35e127866c: User sending message: "Jessica，你现在提的这个改动涉及核心订单状态机。周五改这个风险太大，一旦出问题会影响周末的单量。我建议放到下个版本迭代。"
+2026-02-11 15:34:15,090 - BySideScheme - [ERROR] - Error in simulation step: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2026-02-11 15:34:29,972 - BySideScheme - [INFO] - [Jessica] Found relevant memories: - 建议将改动放到下个版本迭代，因为周五修改风险太大，可能会影响周末的单量
+- Jessica 提议的改动涉及核心订单状态机
+2026-02-11 15:34:39,685 - BySideScheme - [ERROR] - Job 4e8537b3-e0fa-4999-88b2-aeef3c1c9705 failed: property 'system_message' of 'MemoryAwareAssistantAgent' object has no setter
+Traceback (most recent call last):
+  File "/home/nyx/BySideScheme/BySideScheme_backend/src/api/routers/simulator.py", line 483, in runner
+    analysis = await run_in_threadpool(session.analyze)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nyx/BySideScheme/BySideScheme_backend/.venv/lib/python3.12/site-packages/starlette/concurrency.py", line 32, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nyx/BySideScheme/BySideScheme_backend/.venv/lib/python3.12/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nyx/BySideScheme/BySideScheme_backend/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2502, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/nyx/BySideScheme/BySideScheme_backend/.venv/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nyx/BySideScheme/BySideScheme_backend/src/api/routers/simulator.py", line 296, in analyze
+    self._apply_persona_updates(analysis)
+  File "/home/nyx/BySideScheme/BySideScheme_backend/src/api/routers/simulator.py", line 268, in _apply_persona_updates
+    agent.system_message = self.factory.build_leader_system_message(
+    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: property 'system_message' of 'MemoryAwareAssistantAgent' object has no setter
+2026-02-11 15:35:27,866 - BySideScheme - [INFO] - [David] Found relevant memories: - 用户认为下单体验优化不能等
+- 用户认为每多等一天就多流失一批用户
+- 建议将改动放到下个版本迭代，因为周五修改风险太大，可能会影响周末的单量
+2026-02-11 15:36:19,221 - BySideScheme - [INFO] - [Jessica] Found relevant memories: - 用户认为周末的单量数据对本季度KPI很关键
+- 用户在寻找折中方案，比如先做部分优化
+- 用户关注用户价值
+2026-02-11 15:36:55,231 - BySideScheme - [INFO] - [David] Found relevant memories: - 指出当前转化率比竞品低了5个点
+- 强调必须打通用户在下单过程中流失的环节
+- 用户认为下单体验优化不能等
+2026-02-11 15:37:54,901 - BySideScheme - [INFO] - [Jessica] Found relevant memories: - 建议将改动放到下个版本迭代，因为周五修改风险太大，可能会影响周末的单量
+- 用户在寻找折中方案，比如先做部分优化
+- Jessica 提议的改动涉及核心订单状态机
+2026-02-11 15:39:21,553 - BySideScheme - [INFO] - [David] Found relevant memories: - 上周小流量测试的结果显示转化率提升了3.2%
+- 指出当前转化率比竞品低了5个点
+- 建议将改动放到下个版本迭代，因为周五修改风险太大，可能会影响周末的单量
+2026-02-11 15:42:56,243 - BySideScheme - [INFO] - Application shutdown.
+2026-02-11 15:42:57,510 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 15:42:57,510 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 15:42:57,510 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 15:42:57,580 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 15:42:57,583 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 15:42:57,583 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 15:42:57,588 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 15:42:57,588 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 15:42:57,588 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 15:47:01,954 - BySideScheme - [INFO] - Application shutdown.
+2026-02-11 15:47:03,557 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 15:47:03,558 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 15:47:03,558 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 15:47:03,633 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 15:47:03,637 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 15:47:03,637 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 15:47:03,640 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 15:47:03,640 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 15:47:03,640 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 15:49:47,767 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 15:49:47,775 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 15:49:56,163 - BySideScheme - [INFO] - Generating advice for user 小松. Fact: "今天是周一早会。周末'天网'项目的一个非核心抽奖功能出了 ...
+2026-02-11 15:49:56,165 - BySideScheme - [INFO] - [小松] Processing daily input: "今天是周一早会。周末'天网'项目的一个非核心抽奖功能出了 Bug，导致少量客诉，但主流程没问题，核...
+2026-02-11 15:50:38,462 - BySideScheme - [INFO] - [小松] Added new memories from generated advice.
+2026-02-11 15:50:38,462 - BySideScheme - [INFO] - Advice generated successfully for user 小松
+2026-02-11 15:51:24,124 - BySideScheme - [INFO] - Generating advice for user 小松. Fact: "最担心的事情发生了。刚才第三方服务商 X 彻底宕机，'天网...
+2026-02-11 15:51:24,125 - BySideScheme - [INFO] - [小松] Processing daily input: "最担心的事情发生了。刚才第三方服务商 X 彻底宕机，'天网'主流程全挂。Alex 在两百人的大群里...
+2026-02-11 15:52:22,332 - BySideScheme - [INFO] - [小松] Added new memories from generated advice.
+2026-02-11 15:52:22,332 - BySideScheme - [INFO] - Advice generated successfully for user 小松
+2026-02-11 15:53:51,245 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 15:53:51,251 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 15:53:52,611 - BySideScheme - [INFO] - Consolidating memories for user 小松
+2026-02-11 15:53:52,613 - BySideScheme - [INFO] - Consolidating 22 memories...
+2026-02-11 15:54:00,855 - BySideScheme - [INFO] - Consolidated memories into 5 insights.
+2026-02-11 15:55:25,379 - BySideScheme - [INFO] - Consolidated 22 memories into 5 insights for user 小松
+2026-02-11 15:55:25,388 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 15:56:11,362 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 15:56:11,367 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 16:02:58,465 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 16:02:58,469 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 16:04:57,049 - BySideScheme - [INFO] - Generating advice for user 小松. Fact: 后端资源部天天用业务安全，数据安全来压制我们业务线，结果后端...
+2026-02-11 16:04:57,050 - BySideScheme - [INFO] - [小松] Processing daily input: 后端资源部天天用业务安全，数据安全来压制我们业务线，结果后端资源部，拿着所有详细的业务数据，找京东做...
+2026-02-11 16:05:43,885 - BySideScheme - [INFO] - [小松] Added new memories from generated advice.
+2026-02-11 16:05:43,885 - BySideScheme - [INFO] - Advice generated successfully for user 小松
+2026-02-11 16:07:11,537 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 16:07:11,544 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 16:07:15,386 - BySideScheme - [INFO] - Consolidating memories for user 小松
+2026-02-11 16:07:15,388 - BySideScheme - [INFO] - Consolidating 37 memories...
+2026-02-11 16:07:27,877 - BySideScheme - [INFO] - Consolidated memories into 10 insights.
+2026-02-11 16:09:14,804 - BySideScheme - [INFO] - Consolidated 37 memories into 10 insights for user 小松
+2026-02-11 16:09:14,813 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 16:10:21,280 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 16:10:21,285 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 16:10:49,025 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 16:10:49,031 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 16:10:57,184 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 16:10:57,189 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 16:11:52,709 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 16:11:52,712 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 16:12:03,349 - BySideScheme - [INFO] - Fetching situation for user: David
+2026-02-11 16:12:03,349 - BySideScheme - [WARNING] - No situation found for user David, using default.
+2026-02-11 16:12:04,520 - BySideScheme - [INFO] - Fetching all memories for user David 
+2026-02-11 16:12:04,525 - BySideScheme - [INFO] - Fetching all memories for user David 
+2026-02-11 16:12:05,617 - BySideScheme - [INFO] - Fetching situation for user: David
+2026-02-11 16:12:05,617 - BySideScheme - [WARNING] - No situation found for user David, using default.
+2026-02-11 16:12:05,620 - BySideScheme - [INFO] - Fetching situation for user: David
+2026-02-11 16:12:05,620 - BySideScheme - [WARNING] - No situation found for user David, using default.
+2026-02-11 16:12:11,136 - BySideScheme - [INFO] - Fetching situation for user: David
+2026-02-11 16:12:11,136 - BySideScheme - [WARNING] - No situation found for user David, using default.
+2026-02-11 16:12:11,140 - BySideScheme - [INFO] - Fetching situation for user: David
+2026-02-11 16:12:11,141 - BySideScheme - [WARNING] - No situation found for user David, using default.
+2026-02-11 16:12:12,224 - BySideScheme - [INFO] - Fetching situation for user: David
+2026-02-11 16:12:12,224 - BySideScheme - [WARNING] - No situation found for user David, using default.
+2026-02-11 16:12:12,226 - BySideScheme - [INFO] - Fetching situation for user: David
+2026-02-11 16:12:12,226 - BySideScheme - [WARNING] - No situation found for user David, using default.
+2026-02-11 16:12:13,239 - BySideScheme - [INFO] - Fetching all memories for user David 
+2026-02-11 16:12:13,243 - BySideScheme - [INFO] - Fetching all memories for user David 
+2026-02-11 16:12:14,056 - BySideScheme - [INFO] - Fetching situation for user: David
+2026-02-11 16:12:14,056 - BySideScheme - [WARNING] - No situation found for user David, using default.
+2026-02-11 16:12:14,058 - BySideScheme - [INFO] - Fetching situation for user: David
+2026-02-11 16:12:14,058 - BySideScheme - [WARNING] - No situation found for user David, using default.
+2026-02-11 16:12:22,035 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 16:12:25,901 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 16:12:25,908 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 16:12:29,058 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 16:12:29,061 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 16:12:34,525 - BySideScheme - [INFO] - Updating situation for user: 小松
+2026-02-11 16:12:39,769 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 16:12:39,775 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 16:12:42,744 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 16:12:48,686 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 16:12:48,693 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 16:12:49,856 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 16:12:49,859 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 16:12:55,302 - BySideScheme - [INFO] - Updating situation for user: 小松
+2026-02-11 16:13:55,532 - BySideScheme - [INFO] - Application shutdown.
+2026-02-11 16:13:56,999 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 16:13:56,999 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 16:13:56,999 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 16:13:57,088 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 16:13:57,091 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 16:13:57,091 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 16:13:57,095 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 16:13:57,095 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 16:13:57,095 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 16:13:57,099 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 16:13:57,102 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 16:38:29,829 - BySideScheme - [INFO] - Root endpoint accessed.
+2026-02-11 16:39:20,115 - BySideScheme - [INFO] - Fetching situation for user: demo_user_001
+2026-02-11 16:39:20,116 - BySideScheme - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-11 16:39:20,121 - BySideScheme - [INFO] - Fetching situation for user: demo_user_001
+2026-02-11 16:39:20,122 - BySideScheme - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-11 16:39:38,317 - BySideScheme - [INFO] - Fetching all memories for user 闫明阳
+2026-02-11 16:39:38,326 - BySideScheme - [INFO] - Fetching all memories for user 闫明阳
+2026-02-11 16:40:04,680 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 16:40:04,688 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 16:40:05,721 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 16:40:05,726 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 16:40:36,485 - BySideScheme - [INFO] - Fetching all memories for user 闫明阳
+2026-02-11 16:40:36,489 - BySideScheme - [INFO] - Fetching all memories for user 闫明阳
+2026-02-11 16:41:22,920 - BySideScheme - [INFO] - Fetching all memories for user 闫明阳
+2026-02-11 16:41:22,925 - BySideScheme - [INFO] - Fetching all memories for user 闫明阳

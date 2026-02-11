@@ -11,10 +11,8 @@ import { useUserStore } from '../store/userStore';
 const API_BASE_URL = 'http://localhost:8001';
 
 const Simulator = () => {
-  const { userId, user_name: storeUserName } = useUserStore((state: any) => ({ 
-    userId: state.userId, 
-    user_name: state.user_name || "Me" 
-  }));
+  const userId = useUserStore((state) => state.userId);
+  const storeUserName = useUserStore((state: any) => state.user_name || "Me");
   
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -35,22 +33,22 @@ const Simulator = () => {
         kind: 'leader',
         name: "David",
         title: "直属领导",
-        persona: "控制欲强，喜欢听好话，但关键时刻能扛事。口头禅是'抓手'、'赋能'、'闭环'。",
+        persona: "风险厌恶型，耳根子软，怕担责，看重数据。关系：摇摆不定。影响力：High",
         engine: "deepseek"
-      },
-      {
-        kind: 'leader',
-        name: "Sarah",
-        title: "部门总监",
-        persona: "结果导向，雷厉风行，不喜欢听借口，只看数据。",
-        engine: "qwen3"
       },
       {
         kind: 'colleague',
         name: "Alex",
-        title: "",
-        persona: "谨慎务实，擅长补充细节，喜欢把事情拆成可执行清单。",
-        engine: "glm"
+        title: "隔壁组长",
+        persona: "竞争对手。笑面虎，抢功甩锅型，喜欢在群里@人。关系：敌对。影响力：Medium",
+        engine: "deepseek"
+      },
+      {
+        kind: 'colleague',
+        name: "Jessica",
+        title: "产品经理",
+        persona: "合作方。强势，老板红人，喜欢用“用户价值”压技术。关系：合作但紧张。影响力：Medium",
+        engine: "deepseek"
       }
     ]
   });
@@ -131,6 +129,8 @@ const Simulator = () => {
       timestamp: Date.now()
     };
 
+    // Optimistically add user message to UI
+    // Note: We need to handle potential duplication if the SSE stream also sends back the user message
     setMessages(prev => [...prev, userMsg]);
     setInput('');
     setIsLoading(true);
@@ -152,10 +152,16 @@ const Simulator = () => {
       es.addEventListener('message', (event) => {
         try {
           const data = JSON.parse(event.data);
+          
+          // Skip if the message is from the user themselves (to avoid duplication with optimistic update)
+          // The backend might send back the user's message as part of the group chat history
+          if (data.sender === config.user_name || data.role === 'user') {
+            return;
+          }
+
           setMessages(prev => {
-            // Check if message already exists to avoid duplicates (basic check by content and sender)
-            // Ideally backend should provide message IDs
-            const exists = prev.some(m => m.content === data.content && m.sender === data.sender && m.timestamp === data.timestamp);
+            // Check if message already exists to avoid duplicates
+            const exists = prev.some(m => m.content === data.content && m.sender === data.sender);
             if (exists) return prev;
             
             return [...prev, {
@@ -221,7 +227,7 @@ const Simulator = () => {
             职场模拟器 (Simulator)
           </h1>
           <p className="text-gray-400 mt-2">
-            基于 AutoGen 的多智能体职场演练场。与具有独立记忆的 AI 同事和领导切磋。
+            基于 AutoGen 的多智能体职场演练场。与具有独立记忆的 AI 同事和领导切磋。autogen需要多轮洞察和思考,慢是正常的,请耐心等待
           </p>
         </div>
         
