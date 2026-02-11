@@ -126,6 +126,26 @@ class SimulationSession:
         effective_people: List[PersonProfile] = []
         if request.people:
             effective_people = request.people
+        elif self.situation and self.situation.stakeholders:
+            # Load from DB Situation
+            for s in self.situation.stakeholders:
+                # Heuristic for kind
+                kind = "colleague"
+                lower_role = s.role.lower()
+                # Keywords indicating a leader role
+                leader_keywords = ["manager", "leader", "boss", "director", "vp", "head", "chief", "lead", "总", "长", "主管", "经理"]
+                if any(k in lower_role for k in leader_keywords):
+                    kind = "leader"
+                
+                effective_people.append(
+                    PersonProfile(
+                        kind=kind,
+                        name=s.name,
+                        title=s.role,
+                        persona=f"{s.style}。关系：{s.relationship}。影响力：{s.influence_level}",
+                        engine="deepseek"
+                    )
+                )
         else:
             for leader in (request.leaders or []):
                 effective_people.append(
@@ -158,6 +178,19 @@ class SimulationSession:
             max_consecutive_auto_reply=0,
             code_execution_config=False,
             system_message="我是团队的一员，正在向领导汇报或请示。"
+        )
+
+        # Ensure UserProxy never blocks and always terminates the turn when selected
+        def check_termination(recipient, messages, sender, config):
+            # Log that we are terminating the turn
+            # returning (True, None) signals that we processed the reply but have nothing to say,
+            # which stops the GroupChat loop for this agent.
+            return True, None
+
+        self.user_proxy.register_reply(
+            [autogen.Agent, None],
+            check_termination,
+            position=0
         )
         
         # 2. Agents

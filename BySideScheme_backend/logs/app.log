@@ -666,3 +666,96 @@ AttributeError: property 'system_message' of 'MemoryAwareAssistantAgent' object 
 2026-02-11 16:40:36,489 - BySideScheme - [INFO] - Fetching all memories for user 闫明阳
 2026-02-11 16:41:22,920 - BySideScheme - [INFO] - Fetching all memories for user 闫明阳
 2026-02-11 16:41:22,925 - BySideScheme - [INFO] - Fetching all memories for user 闫明阳
+2026-02-11 17:21:16,765 - BySideScheme - [INFO] - Application shutdown.
+2026-02-11 17:21:18,424 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 17:21:18,425 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 17:21:18,425 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 17:21:18,559 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 17:21:18,564 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 17:21:18,564 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 17:21:18,567 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 17:21:18,567 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 17:21:18,567 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 17:22:56,799 - BySideScheme - [INFO] - Application shutdown.
+2026-02-11 17:22:58,215 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 17:22:58,215 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 17:22:58,216 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 17:22:58,306 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 17:22:58,310 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 17:22:58,310 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 17:22:58,313 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 17:22:58,313 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 17:22:58,314 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 17:23:23,692 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:23:23,698 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:23:33,814 - BySideScheme - [INFO] - Application shutdown.
+2026-02-11 17:23:35,254 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 17:23:35,254 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 17:23:35,255 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 17:23:35,378 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 17:23:35,382 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 17:23:35,382 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 17:23:35,385 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 17:23:35,385 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 17:23:35,385 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 17:23:45,800 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:23:45,804 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:24:00,951 - BySideScheme - [INFO] - Application shutdown.
+2026-02-11 17:24:02,297 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 17:24:02,297 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 17:24:02,298 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 17:24:02,403 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 17:24:02,407 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 17:24:02,407 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 17:24:02,410 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 17:24:02,410 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 17:24:02,410 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 17:27:34,346 - BySideScheme - [INFO] - Application shutdown.
+2026-02-11 17:27:35,629 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 17:27:35,629 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 17:27:35,630 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 17:27:35,718 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 17:27:35,722 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 17:27:35,722 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 17:27:35,725 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 17:27:35,725 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 17:27:35,725 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 17:28:08,472 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:28:08,477 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:28:33,373 - BySideScheme - [INFO] - Application shutdown.
+2026-02-11 17:28:34,567 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 17:28:34,567 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 17:28:34,567 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 17:28:34,635 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 17:28:34,638 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 17:28:34,638 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 17:28:34,641 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 17:28:34,642 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 17:28:34,642 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 17:28:52,391 - BySideScheme - [INFO] - Application shutdown.
+2026-02-11 17:28:53,695 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 17:28:53,695 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 17:28:53,696 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 17:28:53,778 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 17:28:53,781 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 17:28:53,781 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 17:28:53,784 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 17:28:53,784 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 17:28:53,784 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 17:29:06,397 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 17:29:06,405 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 17:29:06,618 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:29:06,621 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:29:43,857 - BySideScheme - [INFO] - Updating situation for user: 小松
+2026-02-11 17:29:47,883 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 17:29:47,888 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 17:29:48,750 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:29:48,753 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:29:54,135 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:29:54,139 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:29:55,536 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:29:55,538 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:29:55,873 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 17:29:55,877 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 17:29:57,154 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:29:57,156 - BySideScheme - [INFO] - Fetching situation for user: 小松

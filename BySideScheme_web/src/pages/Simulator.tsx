@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Users, User, Bot, Trash2, Play, RefreshCw, MessageSquare, PanelRightOpen, PanelRightClose } from 'lucide-react';
-import { startSimulation, resetSimulation, startChatJob } from '../services/api';
+import { startSimulation, resetSimulation, startChatJob, getSituation } from '../services/api';
 import { ChatMessage, SimulatorInitRequest, Analysis, PersonConfig } from '../types';
 import { cn } from '../utils/cn';
 import AnalysisPanel from '../components/AnalysisPanel';
@@ -52,6 +52,28 @@ const Simulator = () => {
       }
     ]
   });
+
+  // Load configuration from DB
+  useEffect(() => {
+    if (userId) {
+      getSituation(userId).then(data => {
+        if (data.situation && data.situation.stakeholders && data.situation.stakeholders.length > 0) {
+          const newPeople: PersonConfig[] = data.situation.stakeholders.map(s => {
+             const lowerRole = s.role.toLowerCase();
+             const isLeader = ["manager", "leader", "boss", "director", "vp", "head", "chief", "lead", "总", "长", "主管", "经理"].some(k => lowerRole.includes(k));
+             return {
+               kind: isLeader ? 'leader' : 'colleague',
+               name: s.name,
+               title: s.role,
+               persona: `${s.style}。关系：${s.relationship}。影响力：${s.influence_level}`,
+               engine: "deepseek"
+             };
+          });
+          setConfig(prev => ({ ...prev, people: newPeople }));
+        }
+      }).catch(err => console.error("Failed to fetch situation for simulator config:", err));
+    }
+  }, [userId]);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const eventSourceRef = useRef<EventSource | null>(null);
