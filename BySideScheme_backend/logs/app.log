@@ -838,3 +838,175 @@ AttributeError: property 'system_message' of 'MemoryAwareAssistantAgent' object 
 2026-02-11 17:53:28,870 - BySideScheme - [WARNING] - No situation found for user 小王, using default.
 2026-02-11 17:53:28,872 - BySideScheme - [INFO] - Fetching situation for user: 小王
 2026-02-11 17:53:28,873 - BySideScheme - [WARNING] - No situation found for user 小王, using default.
+2026-02-11 17:57:53,873 - BySideScheme - [INFO] - Updating situation for user: 小王
+2026-02-11 17:57:56,939 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 17:57:56,943 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 17:57:57,640 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 17:57:57,643 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 17:58:03,734 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 17:58:03,737 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 17:59:06,105 - BySideScheme - [INFO] - Generating advice for user 小王. Fact: "今天项目进度会上，当我演示到‘心情树洞’功能时，李工突然打...
+2026-02-11 17:59:06,106 - BySideScheme - [INFO] - [小王] Processing daily input: "今天项目进度会上，当我演示到‘心情树洞’功能时，李工突然打断，当着陈副总的面阴阳怪气地说：‘小王啊...
+2026-02-11 17:59:35,005 - BySideScheme - [INFO] - [小王] Added new memories from generated advice.
+2026-02-11 17:59:35,005 - BySideScheme - [INFO] - Advice generated successfully for user 小王
+2026-02-11 18:00:19,929 - BySideScheme - [INFO] - Generating advice for user 小王. Fact: "按照建议，我私下找了李工。我先捧了他几句，然后诚恳地说：‘...
+2026-02-11 18:00:19,930 - BySideScheme - [INFO] - [小王] Processing daily input: "按照建议，我私下找了李工。我先捧了他几句，然后诚恳地说：‘李工，集团信息安全这块您是元老，108 ...
+2026-02-11 18:00:52,735 - BySideScheme - [INFO] - [小王] Added new memories from generated advice.
+2026-02-11 18:00:52,735 - BySideScheme - [INFO] - Advice generated successfully for user 小王
+2026-02-11 18:03:54,032 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:03:54,038 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:03:55,602 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:03:55,605 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:03:58,001 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 18:03:58,004 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 18:04:03,711 - BySideScheme - [INFO] - Generating advice for user 小王. Fact: "今天下午调试 SSO 单点登录时，发现和旧的工会系统死活调...
+2026-02-11 18:04:03,712 - BySideScheme - [INFO] - [小王] Processing daily input: "今天下午调试 SSO 单点登录时，发现和旧的工会系统死活调不通。正常流程走工单要三天。我试着给李工...
+2026-02-11 18:04:32,257 - BySideScheme - [INFO] - [小王] Added new memories from generated advice.
+2026-02-11 18:04:32,258 - BySideScheme - [INFO] - Advice generated successfully for user 小王
+2026-02-11 18:04:51,326 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:04:51,330 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:04:55,401 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:04:55,407 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:04:56,693 - BySideScheme - [INFO] - Consolidating memories for user 小王
+2026-02-11 18:04:56,695 - BySideScheme - [INFO] - Consolidating 21 memories...
+2026-02-11 18:05:03,543 - BySideScheme - [INFO] - Consolidated memories into 6 insights.
+2026-02-11 18:06:08,619 - BySideScheme - [INFO] - Consolidated 21 memories into 6 insights for user 小王
+2026-02-11 18:06:08,943 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:06:21,821 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:06:21,824 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:06:25,775 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 18:06:25,778 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 18:06:29,430 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:06:29,433 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:06:38,651 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:06:38,657 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:06:39,187 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:06:39,189 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:06:52,566 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:06:52,570 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:06:53,882 - BySideScheme - [INFO] - Using configured engine 'deepseek' for SIMULATOR_INSIGHTS_ENGINE
+2026-02-11 18:06:53,885 - BySideScheme - [INFO] - SimulatorInsightsEngine initialized with model: deepseek-chat
+2026-02-11 18:06:53,885 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 18:06:53,926 - BySideScheme - [INFO] - Created new simulation session: e908df8f-10ab-437d-8214-6b16ab1984ae
+2026-02-11 18:06:58,338 - BySideScheme - [INFO] - Session e908df8f-10ab-437d-8214-6b16ab1984ae: User sending message: "各位领导，‘陪了吗’首周内测数据出来了，日活超预期 300%。张总提议的全面推广方案，陈总担心的并发安全问题，我们做了一个折中方案。特别感谢李工这周帮我们梳理了安全架构，现在的方案完全符合 108 号文。"
+2026-02-11 18:07:52,306 - BySideScheme - [INFO] - [王经理 (直属领导)] Found relevant memories: - ‘陪了吗’首周内测数据日活超预期 300%
+- 团队针对推广方案和安全问题做了折中方案
+- 李工帮忙梳理了安全架构
+2026-02-11 18:08:44,040 - BySideScheme - [INFO] - [李工] Found relevant memories: - 现在的方案完全符合 108 号文，且108号文第7条明确要求这类服务上线前必须通过等保三级测评
+- 李工帮忙梳理了安全架构，且关注该架构是否有第三方机构出具的安全合规证明
+- 团队针对推广方案和安全问题做了折中方案，且该方案需要书面评估报告
+2026-02-11 18:09:01,818 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 18:09:01,822 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 18:09:34,355 - BySideScheme - [INFO] - [张副总 (部门副总 1)] Found relevant memories: - 认为折中方案可能是让运维半夜手动扩容
+- 没说过架构图“完全符合”这种话
+- 上周帮忙看了几眼架构图
+2026-02-11 18:10:44,092 - BySideScheme - [INFO] - [陈副总 (部门副总 2)] Found relevant memories: - 提议分阶段推进等保三级认证，先上线抢占市场，三个月内补全
+- 向王总汇报了300%的日活增长数据
+- 已安排技术团队进行压力测试以解决陈总担心的并发问题，结果下午出来
+2026-02-11 18:11:53,884 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:12:29,208 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:12:29,214 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:12:34,214 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:12:34,217 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:12:38,534 - BySideScheme - [INFO] - Using configured engine 'deepseek' for SIMULATOR_INSIGHTS_ENGINE
+2026-02-11 18:12:38,537 - BySideScheme - [INFO] - SimulatorInsightsEngine initialized with model: deepseek-chat
+2026-02-11 18:12:38,537 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 18:12:38,579 - BySideScheme - [INFO] - Created new simulation session: 354392b4-67d2-4738-80bc-ccc711f3442b
+2026-02-11 18:12:47,374 - BySideScheme - [INFO] - Session 354392b4-67d2-4738-80bc-ccc711f3442b: User sending message: "各位领导，‘陪了吗’首周内测数据出来了，日活超预期 300%。张总提议的全面推广方案，陈总担心的并发安全问题，我们做了一个折中方案。特别感谢李工这周帮我们梳理了安全架构，现在的方案完全符合 108 号文。"
+2026-02-11 18:13:00,901 - BySideScheme - [INFO] - [刘总 (部门总)] Found relevant memories: - 根据108号文第23条，项目上线若出事，第一责任人是项目负责人，第二责任人是运维安全部
+- 去年智能客服项目因等保测评拖延半年被监管通报
+- 已安排技术团队进行压力测试以解决陈总担心的并发问题，结果下午出来
+2026-02-11 18:13:40,526 - BySideScheme - [INFO] - [王经理 (直属领导)] Found relevant memories: - ‘陪了吗’首周内测数据日活超预期 300%
+- 团队针对推广方案和安全问题做了折中方案
+- 向王总汇报了300%的日活增长数据
+2026-02-11 18:14:27,582 - BySideScheme - [INFO] - [王经理 (直属领导)] Found relevant memories: - 技术部需要在压力测试结果出来后三天内给出等保三级达标时间表
+- 提议分阶段推进等保三级认证，先上线抢占市场，三个月内补全
+- 提到去年智能客服项目因等保测评拖延被监管通报
+2026-02-11 18:14:47,331 - BySideScheme - [INFO] - [陈副总 (部门副总 2)] Found relevant memories: - 向王总汇报了300%的日活增长数据
+- 现在的方案完全符合 108 号文
+- 108号文是部委刚下的文件
+2026-02-11 18:15:48,048 - BySideScheme - [INFO] - [李工] Found relevant memories: - 服务器负载至少是预期的三倍
+- 现在的方案完全符合 108 号文，且108号文第7条明确要求这类服务上线前必须通过等保三级测评
+- 提议分阶段推进等保三级认证，先上线抢占市场，三个月内补全
+2026-02-11 18:16:18,722 - BySideScheme - [INFO] - [李工] Found relevant memories: - 李工帮忙梳理了安全架构，且关注该架构是否有第三方机构出具的安全合规证明，曾评价基础架构设计合理，要求李工下午把架构评审的原始记录发一份
+- 存有张总去年智能客服项目承诺书的复印件
+- 认为李工说的'基础架构设计合理'和'符合108号文'是两个概念，需要确认李工关于'基础架构设计合理'的原始会议纪要
+2026-02-11 18:17:01,470 - BySideScheme - [INFO] - [张副总 (部门副总 1)] Found relevant memories: - 提到108号文第7条明确要求这类服务上线前必须通过等保三级测评
+- 提到等保三级测评至少要两个月
+- 用户指出没有等保三级认证就上线，根据108号文第23条，项目负责人是第一责任人，安全负责人是第二责任人
+2026-02-11 18:17:43,150 - BySideScheme - [INFO] - Application shutdown.
+2026-02-11 18:17:44,443 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 18:17:44,443 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 18:17:44,443 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 18:17:44,544 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 18:17:44,547 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 18:17:44,547 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 18:17:44,550 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 18:17:44,550 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 18:17:44,550 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 18:17:44,556 - BySideScheme - [INFO] - Using configured engine 'deepseek' for SIMULATOR_INSIGHTS_ENGINE
+2026-02-11 18:17:44,560 - BySideScheme - [INFO] - SimulatorInsightsEngine initialized with model: deepseek-chat
+2026-02-11 18:17:44,560 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 18:17:44,580 - BySideScheme - [INFO] - Created new simulation session: b83229e3-80d3-41f0-943e-2756bf3fdc19
+2026-02-11 18:17:44,581 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:17:44,587 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:17:52,705 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:17:52,709 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:17:54,610 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:17:54,615 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:17:55,512 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:17:55,515 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:17:59,082 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:17:59,084 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:17:59,464 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:17:59,469 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:18:01,650 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:18:01,653 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:18:02,399 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:18:02,405 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:18:04,536 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:18:04,540 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:18:06,853 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:18:06,859 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:18:18,632 - BySideScheme - [INFO] - Application shutdown.
+2026-02-11 18:18:20,042 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 18:18:20,042 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 18:18:20,043 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 18:18:20,136 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 18:18:20,139 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 18:18:20,139 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 18:18:20,145 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 18:18:20,145 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 18:18:20,145 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 18:18:25,656 - BySideScheme - [INFO] - Root endpoint accessed.
+2026-02-11 18:18:25,663 - BySideScheme - [INFO] - Using configured engine 'deepseek' for SIMULATOR_INSIGHTS_ENGINE
+2026-02-11 18:18:25,666 - BySideScheme - [INFO] - SimulatorInsightsEngine initialized with model: deepseek-chat
+2026-02-11 18:18:25,667 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 18:18:25,714 - BySideScheme - [INFO] - Created new simulation session: 0ec977c6-0124-486a-bcea-38b31a8837e5
+2026-02-11 18:18:25,718 - BySideScheme - [INFO] - Session 0ec977c6-0124-486a-bcea-38b31a8837e5: User sending message: Hello everyone, let's start the meeting.
+2026-02-11 18:18:48,471 - BySideScheme - [INFO] - [David] Found relevant memories: - 有问题随时回滚
+- 计划让测试团队周末待命
+- 用户认为下单体验优化不能等
+2026-02-11 18:19:34,572 - BySideScheme - [INFO] - [Alice] Found relevant memories: - 已获得特批资源，测试团队这周末全部待命配合
+- 被要求提供具体的上线时间表和回滚预案
+- 坚持要做“下单体验优化”项目
+2026-02-11 18:19:56,679 - BySideScheme - [INFO] - Application shutdown.
+2026-02-11 18:19:57,824 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 18:19:57,824 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 18:19:57,825 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 18:19:57,908 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 18:19:57,911 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 18:19:57,911 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 18:19:57,914 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 18:19:57,914 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 18:19:57,914 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 18:20:32,075 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:20:32,079 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:20:34,408 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:20:34,411 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:20:35,559 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:20:35,562 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:21:30,775 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:21:30,780 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:21:35,158 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:21:35,161 - BySideScheme - [INFO] - Fetching situation for user: 小王

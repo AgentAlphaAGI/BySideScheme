@@ -174,11 +174,13 @@ const Simulator = () => {
       es.addEventListener('message', (event) => {
         try {
           const data = JSON.parse(event.data);
+          console.log("Received SSE Message:", data);
           
-          // Skip if the message is from the user themselves (to avoid duplication with optimistic update)
-          // The backend might send back the user's message as part of the group chat history
-          if (data.sender === config.user_name || data.role === 'user') {
-            return;
+          // Relaxed filtering: Only filter if it's strictly the user's role AND name matches
+          // This prevents filtering out "David" if his role happens to be misinterpreted
+          if (data.role === 'user' && data.sender === config.user_name) {
+             console.log("Skipping user message echo");
+             return;
           }
 
           setMessages(prev => {
@@ -205,6 +207,21 @@ const Simulator = () => {
         }
       });
 
+      es.addEventListener('error', (event: MessageEvent) => {
+        try {
+            const data = JSON.parse(event.data);
+            console.error("Job Error:", data);
+            setMessages(prev => [...prev, {
+                sender: "System",
+                content: `错误: ${data.error || data.detail || "未知错误"}`,
+                role: "system",
+                timestamp: Date.now()
+            }]);
+        } catch (e) {
+            console.error("Error parsing SSE error event:", e);
+        }
+      });
+
       es.addEventListener('status', (event) => {
          // Handle status updates if needed
          console.log("Job status:", event.data);
@@ -217,10 +234,13 @@ const Simulator = () => {
       });
 
       es.onerror = (err) => {
-        console.error("SSE Error:", err);
-        setIsLoading(false);
-        es.close();
-        eventSourceRef.current = null;
+        // Only report error if connection wasn't closed intentionally
+        if (eventSourceRef.current) {
+            console.error("SSE Connection Error:", err);
+            setIsLoading(false);
+            es.close();
+            eventSourceRef.current = null;
+        }
       };
 
     } catch (error) {
