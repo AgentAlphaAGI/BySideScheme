@@ -211,6 +211,7 @@ class SimulationSession:
                     title=person.title or "领导",
                     persona=persona,
                     engine=person.engine,
+                    user_id=self.user_id, # Pass user_id for isolation
                 )
                 if persona_notes:
                     agent.system_message = self.factory.build_leader_system_message(
@@ -228,6 +229,7 @@ class SimulationSession:
                     name=person.name,
                     persona=person.persona,
                     engine=person.engine,
+                    user_id=self.user_id, # Pass user_id for isolation
                 )
                 self.agents.append(agent)
 
@@ -236,6 +238,7 @@ class SimulationSession:
                 name=request.boss["name"],
                 title="领导",
                 persona=request.boss["style"],
+                user_id=self.user_id, # Pass user_id for isolation
             )
             self.agents.append(agent)
             self.leader_agents[request.boss["name"]] = agent

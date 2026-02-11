@@ -78,22 +78,24 @@ class AgentFactory:
         3. 如果有其他领导在场，请注意职场礼仪和层级关系。
         """
 
-    def create_leader_agent(self, name: str, title: str, persona: str, engine: str | None = None) -> MemoryAwareAssistantAgent:
+    def create_leader_agent(self, name: str, title: str, persona: str, engine: str | None = None, user_id: str = None) -> MemoryAwareAssistantAgent:
         """
         创建一个领导/上级 Agent
         :param name: 名字
         :param title: 职位/头衔 (如: 直属领导, 部门总监, 经理)
         :param persona: 人设/性格描述
+        :param user_id: 真实用户ID，用于隔离记忆
         """
         system_message = self.build_leader_system_message(name=name, title=title, persona=persona)
         return MemoryAwareAssistantAgent(
             name=name,
             system_message=system_message,
             memory_manager=self.memory_manager,
-            llm_config=self.build_llm_config(engine)
+            llm_config=self.build_llm_config(engine),
+            user_id=user_id
         )
 
-    def create_colleague_agent(self, name: str, persona: str, engine: str | None = None) -> MemoryAwareAssistantAgent:
+    def create_colleague_agent(self, name: str, persona: str, engine: str | None = None, user_id: str = None) -> MemoryAwareAssistantAgent:
         """创建一个同事 Agent"""
         system_message = f"""你是一个职场同事，名字叫 {name}。
         你的性格是：{persona}。
@@ -105,10 +107,11 @@ class AgentFactory:
             name=name,
             system_message=system_message,
             memory_manager=self.memory_manager,
-            llm_config=self.build_llm_config(engine)
+            llm_config=self.build_llm_config(engine),
+            user_id=user_id
         )
 
-    def create_boss_agent(self, name: str, style: str, engine: str | None = None) -> MemoryAwareAssistantAgent:
+    def create_boss_agent(self, name: str, style: str, engine: str | None = None, user_id: str = None) -> MemoryAwareAssistantAgent:
         """创建一个领导 Agent"""
         system_message = f"""你是一个公司领导，名字叫 {name}。
         你的管理风格是：{style}。
@@ -120,5 +123,6 @@ class AgentFactory:
             name=name,
             system_message=system_message,
             memory_manager=self.memory_manager,
-            llm_config=self.build_llm_config(engine)
+            llm_config=self.build_llm_config(engine),
+            user_id=user_id
         )

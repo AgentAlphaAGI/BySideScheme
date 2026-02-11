@@ -15,6 +15,7 @@ class MemoryAwareAssistantAgent(autogen.AssistantAgent):
         system_message: str,
         memory_manager: MemoryManager,
         llm_config: dict,
+        user_id: str = None, # Add user_id parameter to support scoped memory
         **kwargs
     ):
         super().__init__(
@@ -24,8 +25,13 @@ class MemoryAwareAssistantAgent(autogen.AssistantAgent):
             **kwargs
         )
         self.memory_manager = memory_manager
-        # 使用 agent 的名字作为 memory 的 user_id，实现数据隔离
-        self.memory_user_id = f"agent_{name}" 
+        # Use a combination of user_id and agent name to ensure strict isolation per user per agent
+        # If user_id is provided, format is: "user_{user_id}_agent_{name}"
+        # If not (legacy/fallback), format is: "agent_{name}"
+        if user_id:
+            self.memory_user_id = f"user_{user_id}_agent_{name}"
+        else:
+            self.memory_user_id = f"agent_{name}" 
         
         # 注册钩子：在处理消息前/后进行记忆操作
         # 注意：AutoGen 的 register_reply 主要用于生成回复。

@@ -759,3 +759,82 @@ AttributeError: property 'system_message' of 'MemoryAwareAssistantAgent' object 
 2026-02-11 17:29:55,877 - BySideScheme - [INFO] - Fetching all memories for user 小松
 2026-02-11 17:29:57,154 - BySideScheme - [INFO] - Fetching situation for user: 小松
 2026-02-11 17:29:57,156 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:31:44,201 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:31:44,206 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:32:27,798 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 17:32:27,803 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 17:32:28,563 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:32:28,565 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:32:29,065 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 17:32:29,069 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 17:32:34,932 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:32:34,936 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:33:40,653 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:33:40,656 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:33:45,077 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 17:33:45,083 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 17:33:45,819 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:33:45,822 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:33:46,576 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:33:46,578 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:33:49,061 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:33:49,063 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:33:50,061 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:33:50,063 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:38:43,411 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:38:43,414 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:43:52,735 - BySideScheme - [INFO] - Application shutdown.
+2026-02-11 17:43:53,880 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 17:43:53,880 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 17:43:53,880 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 17:43:53,949 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 17:43:53,952 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 17:43:53,952 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 17:43:53,955 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 17:43:53,956 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 17:43:53,956 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 17:44:25,032 - BySideScheme - [INFO] - Application shutdown.
+2026-02-11 17:44:26,223 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 17:44:26,223 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 17:44:26,223 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 17:44:26,292 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 17:44:26,295 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 17:44:26,296 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 17:44:26,299 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 17:44:26,299 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 17:44:26,299 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 17:44:46,551 - BySideScheme - [INFO] - Application shutdown.
+2026-02-11 17:44:47,686 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 17:44:47,686 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 17:44:47,687 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 17:44:47,752 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 17:44:47,755 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 17:44:47,755 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 17:44:47,758 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 17:44:47,758 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 17:44:47,758 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 17:50:07,342 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:50:07,347 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:52:58,649 - BySideScheme - [INFO] - Updating situation for user: 小松
+2026-02-11 17:53:01,745 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 17:53:01,751 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 17:53:04,416 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:53:04,419 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:53:06,700 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 17:53:06,705 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 17:53:14,199 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 17:53:14,205 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-11 17:53:16,110 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:53:16,113 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-11 17:53:25,748 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 17:53:25,749 - BySideScheme - [WARNING] - No situation found for user 小王, using default.
+2026-02-11 17:53:27,840 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 17:53:27,840 - BySideScheme - [WARNING] - No situation found for user 小王, using default.
+2026-02-11 17:53:27,843 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 17:53:27,843 - BySideScheme - [WARNING] - No situation found for user 小王, using default.
+2026-02-11 17:53:28,352 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 17:53:28,356 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 17:53:28,870 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 17:53:28,870 - BySideScheme - [WARNING] - No situation found for user 小王, using default.
+2026-02-11 17:53:28,872 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 17:53:28,873 - BySideScheme - [WARNING] - No situation found for user 小王, using default.
