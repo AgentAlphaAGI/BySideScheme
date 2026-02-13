@@ -21,7 +21,7 @@ const Layout: React.FC = () => {
       <nav className="glass fixed bottom-0 w-full md:static md:w-64 md:h-screen flex md:flex-col justify-around md:justify-start md:pt-10 z-50">
         <div className="hidden md:flex items-center justify-center mb-10">
           <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent neon-text-blue">
-            在旁术--来事儿
+            来事儿--来事儿
           </h1>
         </div>
         

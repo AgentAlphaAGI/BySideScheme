@@ -1,6 +1,6 @@
-# 在旁术 (BySideScheme) - Web 前端
+# 来事儿 (BySideScheme) - Web 前端
 
-**在旁术** 职场策略助手的赛博朋克风格前端界面。基于 React + Vite + Tailwind CSS 构建，提供沉浸式的职场局势推演与策略辅助体验。
+**来事儿** 职场策略助手的赛博朋克风格前端界面。基于 React + Vite + Tailwind CSS 构建，提供沉浸式的职场局势推演与策略辅助体验。
 
 ## ✨ 核心特性
 
@@ -86,5 +86,5 @@ src/
 
 ## 🔌 后端集成
 
-本项目预期 **在旁术后端 (BySideScheme Backend)** 运行在 `http://localhost:8001`。
+本项目预期 **来事儿后端 (BySideScheme Backend)** 运行在 `http://localhost:8001`。
 请确保后端服务已启动，若开启了 API Key 鉴权，请在环境变量或配置中进行相应设置。

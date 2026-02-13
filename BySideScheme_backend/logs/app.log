@@ -1238,3 +1238,22 @@ AttributeError: property 'system_message' of 'MemoryAwareAssistantAgent' object 
 2026-02-13 15:30:59,007 - BySideScheme - [INFO] - [王经理] Found relevant memories: - 建议先临时扩容，同时让技术部重新做压力测试以找出瓶颈
 - 建议从技术部的季度绩效里扣除扩容预算
 - 建议在技术根本问题解决前先内部封存所有相关文档
+2026-02-13 15:32:25,751 - BySideScheme - [INFO] - [陈副总 (部门副总 2)] Found relevant memories: - 建议先临时扩容，同时让技术部重新做压力测试以找出瓶颈
+- 临时扩容必须走紧急变更流程，所有操作要有双人复核记录
+- 从技术部绩效扣款需要HR和财务联合出文
+2026-02-13 15:34:32,348 - BySideScheme - [INFO] - [张副总 (部门副总 1)] Found relevant memories: - 持有去年第三季度的安全审计报告，其中第17页明确写着'资源类故障必须升级为SLA-1级'
+- 记得去年因为类似事件修改过SLA-2级事件处理流程条款
+- 要求压力测试原始数据必须在2小时内送到办公室，以便安全团队做独立验证
+2026-02-13 15:35:39,831 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:35:39,845 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:35:39,865 - BySideScheme - [INFO] - Detected 71 graph changes in last 72h for user 小松.
+2026-02-13 15:35:39,866 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:35:39,877 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:35:39,899 - BySideScheme - [INFO] - Detected 71 graph changes in last 72h for user 小松.
+2026-02-13 15:35:55,449 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-13 15:35:55,457 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-13 15:36:55,718 - BySideScheme - [INFO] - [刘总 (部门总)] Found relevant memories: - 建议将简报频率从每15分钟改为每30分钟，但关键节点必须实时通报
+- 持有去年第三季度的安全审计报告，其中第17页写着'资源类故障必须升级为SLA-1级'
+- 要求在1小时内拿到扩容方案相关数据
+2026-02-13 15:37:15,915 - BySideScheme - [INFO] - Neo4j driver closed.
+2026-02-13 15:37:15,915 - BySideScheme - [INFO] - Application shutdown.

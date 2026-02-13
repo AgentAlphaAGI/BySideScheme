@@ -80,7 +80,7 @@ async def lifespan(app: FastAPI):
             pass
     logger.info("Application shutdown.")
 
-app = FastAPI(title="在旁术 (BySideScheme) API", version="1.0.0", lifespan=lifespan)
+app = FastAPI(title="来事儿 (BySideScheme) API", version="1.0.0", lifespan=lifespan)
 
 def _parse_cors_allow_origins() -> list[str]:
     raw = os.getenv("CORS_ALLOW_ORIGINS", "*").strip()
