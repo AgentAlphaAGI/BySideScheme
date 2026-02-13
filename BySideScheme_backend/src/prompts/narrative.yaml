@@ -9,6 +9,9 @@ generate:
     【历史记忆】：
     {memory_context}
     
+    【局势图谱】：
+    {graph_context}
+    
     【今日事实】：
     {fact}
     

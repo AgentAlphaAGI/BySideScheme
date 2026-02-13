@@ -1,0 +1,16 @@
+services:
+  neo4j:
+    image: neo4j:5
+    container_name: bysidescheme-neo4j
+    restart: unless-stopped
+    ports:
+      - "17474:7474"   # Neo4j Browser (避免与已有实例冲突)
+      - "17687:7687"   # Bolt protocol
+    environment:
+      - NEO4J_AUTH=neo4j/bysidescheme
+      - NEO4J_PLUGINS=["apoc"]
+      - NEO4J_server_memory_heap_initial__size=256m
+      - NEO4J_server_memory_heap_max__size=512m
+    volumes:
+      - ./data/neo4j/data:/data
+      - ./data/neo4j/logs:/logs

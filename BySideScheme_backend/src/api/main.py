@@ -23,7 +23,7 @@ logging.getLogger("autogen.oai.client").addFilter(APIKeyWarningFilter())
 # 加载环境变量
 load_dotenv()
 
-from src.api.routers import simulator, feedback
+from src.api.routers import simulator, feedback, graph
 
 from contextlib import asynccontextmanager
 
@@ -35,6 +35,7 @@ class ServiceContainer:
         self.narrative_generator = None
         self.advisor_service = None
         self.db = None
+        self.graph_engine = None
 
     def initialize(self):
         logger.info("Initializing Services...")
@@ -42,10 +43,23 @@ class ServiceContainer:
         self.memory_manager = MemoryManager()
         self.decision_engine = DecisionEngine()
         self.narrative_generator = NarrativeGenerator()
+
+        # 初始化图谱引擎（可选：如果 Neo4j 未配置则跳过）
+        try:
+            from src.core.neo4j_client import Neo4jClient
+            from src.core.graph_engine import GraphEngine
+            neo4j_client = Neo4jClient()
+            self.graph_engine = GraphEngine(neo4j_client)
+            logger.info("GraphEngine initialized successfully.")
+        except Exception as e:
+            logger.warning(f"GraphEngine initialization skipped (Neo4j may not be configured): {e}")
+            self.graph_engine = None
+
         self.advisor_service = AdvisorService(
             self.memory_manager,
             self.decision_engine,
-            self.narrative_generator
+            self.narrative_generator,
+            graph_engine=self.graph_engine
         )
         logger.info("Services Initialized.")
 
@@ -57,7 +71,13 @@ async def lifespan(app: FastAPI):
     container.initialize()
     logger.info("Application startup complete.")
     yield
-    # Shutdown (if needed)
+    # Shutdown
+    if container.graph_engine:
+        try:
+            from src.core.neo4j_client import Neo4jClient
+            Neo4jClient().close()
+        except Exception:
+            pass
     logger.info("Application shutdown.")
 
 app = FastAPI(title="在旁术 (BySideScheme) API", version="1.0.0", lifespan=lifespan)
@@ -84,6 +104,7 @@ app.add_middleware(
 # 注册子路由
 app.include_router(simulator.router, dependencies=[Depends(require_api_key)])
 app.include_router(feedback.router, dependencies=[Depends(require_api_key)])
+app.include_router(graph.router, dependencies=[Depends(require_api_key)])
 
 def get_advisor_service():
     if not container.advisor_service:

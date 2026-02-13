@@ -9,7 +9,7 @@ class DecisionEngine:
         self.client, self.model = LLMClientFactory.create_client("DECISION_ENGINE")
         logger.info(f"DecisionEngine initialized with model: {self.model}")
 
-    def evaluate(self, fact: str, situation_context: str, memory_context: str) -> Dict:
+    def evaluate(self, fact: str, situation_context: str, memory_context: str, graph_context: str = "") -> Dict:
         """
         执行 5 个维度的决策判断
         """
@@ -19,6 +19,7 @@ class DecisionEngine:
             user_msg = prompt_data["user"].format(
                 situation_context=situation_context,
                 memory_context=memory_context,
+                graph_context=graph_context or "(暂无图谱数据)",
                 fact=fact
             )
             

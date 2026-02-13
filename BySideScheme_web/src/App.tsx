@@ -6,6 +6,7 @@ import Advisor from './pages/Advisor';
 import Memory from './pages/Memory';
 import Profile from './pages/Profile';
 import Simulator from './pages/Simulator';
+import GraphView from './pages/GraphView';
 import ErrorBoundary from './components/ErrorBoundary';
 
 const App: React.FC = () => {
@@ -20,6 +21,7 @@ const App: React.FC = () => {
               <Simulator />
             </ErrorBoundary>
           } />
+          <Route path="graph" element={<GraphView />} />
           <Route path="memory" element={<Memory />} />
           <Route path="profile" element={<Profile />} />
         </Route>

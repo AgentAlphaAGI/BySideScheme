@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { LayoutDashboard, BrainCircuit, Database, User, MessageSquareDashed } from 'lucide-react';
+import { LayoutDashboard, BrainCircuit, Database, User, MessageSquareDashed, Network } from 'lucide-react';
 import { cn } from '../utils/cn';
 
 const Layout: React.FC = () => {
@@ -10,6 +10,7 @@ const Layout: React.FC = () => {
     { path: '/', icon: LayoutDashboard, label: '仪表板' },
     { path: '/advisor', icon: BrainCircuit, label: '策略顾问' },
     { path: '/simulator', icon: MessageSquareDashed, label: '模拟器' },
+    { path: '/graph', icon: Network, label: '局势图谱' },
     { path: '/memory', icon: Database, label: '记忆库' },
     { path: '/profile', icon: User, label: '个人中心' },
   ];
@@ -20,7 +21,7 @@ const Layout: React.FC = () => {
       <nav className="glass fixed bottom-0 w-full md:static md:w-64 md:h-screen flex md:flex-col justify-around md:justify-start md:pt-10 z-50">
         <div className="hidden md:flex items-center justify-center mb-10">
           <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent neon-text-blue">
-            在旁术
+            在旁术--来事儿
           </h1>
         </div>
         

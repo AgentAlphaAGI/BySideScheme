@@ -132,3 +132,51 @@ export const rollbackPersona = async (userId: string, personName: string, versio
   const response = await api.post<RollbackResponse>(`/simulator/persona/${userId}/${personName}/rollback`, { persona_version_id: versionId });
   return response.data;
 };
+
+// Graph API
+import {
+  GraphData,
+  GraphChange,
+  GraphInsights,
+  GraphExtractRequest,
+  GraphExtractResponse,
+} from '../types';
+
+export const getGraph = async (userId: string) => {
+  const response = await api.get<GraphData>(`/graph/${userId}`);
+  return response.data;
+};
+
+export const getEntityDetail = async (userId: string, entityName: string, depth: number = 2) => {
+  const response = await api.get<GraphData>(`/graph/${userId}/entity/${encodeURIComponent(entityName)}`, {
+    params: { depth },
+  });
+  return response.data;
+};
+
+export const extractGraph = async (userId: string, request: GraphExtractRequest) => {
+  const response = await api.post<GraphExtractResponse>(`/graph/${userId}/extract`, request);
+  return response.data;
+};
+
+export const getGraphChanges = async (userId: string, hours: number = 24) => {
+  const response = await api.get<GraphChange[]>(`/graph/${userId}/changes`, {
+    params: { hours },
+  });
+  return response.data;
+};
+
+export const getGraphInsights = async (userId: string) => {
+  const response = await api.get<GraphInsights>(`/graph/${userId}/insights`);
+  return response.data;
+};
+
+export const clearGraph = async (userId: string) => {
+  const response = await api.delete(`/graph/${userId}`);
+  return response.data;
+};
+
+export const deleteGraphEntity = async (userId: string, entityName: string) => {
+  const response = await api.delete(`/graph/${userId}/entity/${encodeURIComponent(entityName)}`);
+  return response.data;
+};

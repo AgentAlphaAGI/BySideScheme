@@ -1010,3 +1010,231 @@ AttributeError: property 'system_message' of 'MemoryAwareAssistantAgent' object 
 2026-02-11 18:21:30,780 - BySideScheme - [INFO] - Fetching situation for user: 小王
 2026-02-11 18:21:35,158 - BySideScheme - [INFO] - Fetching situation for user: 小王
 2026-02-11 18:21:35,161 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:23:27,841 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:23:27,850 - BySideScheme - [INFO] - Fetching all memories for user 小王
+2026-02-11 18:23:30,038 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:23:30,041 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 18:23:36,864 - BySideScheme - [INFO] - Application shutdown.
+2026-02-11 21:04:07,686 - BySideScheme - [INFO] - Initializing Services...
+2026-02-11 21:04:07,687 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-11 21:04:07,700 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-11 21:04:08,032 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-11 21:04:08,039 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-11 21:04:08,039 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-11 21:04:08,046 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-11 21:04:08,047 - BySideScheme - [INFO] - Services Initialized.
+2026-02-11 21:04:08,047 - BySideScheme - [INFO] - Application startup complete.
+2026-02-11 21:05:02,910 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 21:05:02,920 - BySideScheme - [INFO] - Fetching situation for user: 小王
+2026-02-11 23:26:47,112 - BySideScheme - [INFO] - Application shutdown.
+2026-02-13 15:07:27,878 - BySideScheme - [INFO] - Initializing Services...
+2026-02-13 15:07:27,878 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-13 15:07:27,884 - BySideScheme - [INFO] - Using local persistence storage at: /home/nyx/BySideScheme/BySideScheme_backend/data
+2026-02-13 15:07:28,030 - BySideScheme - [INFO] - Using configured engine 'deepseek' for DECISION_ENGINE
+2026-02-13 15:07:28,033 - BySideScheme - [INFO] - DecisionEngine initialized with model: deepseek-chat
+2026-02-13 15:07:28,033 - BySideScheme - [INFO] - Using configured engine 'qwen3' for NARRATIVE_ENGINE
+2026-02-13 15:07:28,036 - BySideScheme - [INFO] - NarrativeGenerator initialized with model: qwen-plus
+2026-02-13 15:07:28,036 - BySideScheme - [INFO] - Connecting to Neo4j at bolt://localhost:17687 (db=neo4j)
+2026-02-13 15:07:28,135 - BySideScheme - [INFO] - Neo4j connection established successfully.
+2026-02-13 15:07:28,868 - BySideScheme - [INFO] - Neo4j schema initialization complete.
+2026-02-13 15:07:28,871 - BySideScheme - [INFO] - GraphEngine initialized with model: Pro/zai-org/GLM-4.7
+2026-02-13 15:07:28,871 - BySideScheme - [INFO] - GraphEngine initialized successfully.
+2026-02-13 15:07:28,871 - BySideScheme - [INFO] - Services Initialized.
+2026-02-13 15:07:28,871 - BySideScheme - [INFO] - Application startup complete.
+2026-02-13 15:09:17,832 - BySideScheme - [INFO] - Fetching situation for user: demo_user_001
+2026-02-13 15:09:17,834 - BySideScheme - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-13 15:09:17,837 - BySideScheme - [INFO] - Fetching situation for user: demo_user_001
+2026-02-13 15:09:17,837 - BySideScheme - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-13 15:09:31,014 - BySideScheme - [INFO] - Fetching graph data for user demo_user_001
+2026-02-13 15:09:32,014 - BySideScheme - [INFO] - Fetching graph insights for user demo_user_001
+2026-02-13 15:09:32,506 - BySideScheme - [INFO] - Detected 0 graph changes in last 72h for user demo_user_001.
+2026-02-13 15:09:32,507 - BySideScheme - [INFO] - Fetching graph data for user demo_user_001
+2026-02-13 15:09:32,519 - BySideScheme - [INFO] - Fetching graph insights for user demo_user_001
+2026-02-13 15:09:32,540 - BySideScheme - [INFO] - Detected 0 graph changes in last 72h for user demo_user_001.
+2026-02-13 15:09:39,179 - BySideScheme - [INFO] - Fetching graph data for user demo_user_001
+2026-02-13 15:09:39,192 - BySideScheme - [INFO] - Fetching graph insights for user demo_user_001
+2026-02-13 15:09:39,215 - BySideScheme - [INFO] - Detected 0 graph changes in last 72h for user demo_user_001.
+2026-02-13 15:09:39,216 - BySideScheme - [INFO] - Fetching graph data for user demo_user_001
+2026-02-13 15:09:39,226 - BySideScheme - [INFO] - Fetching graph insights for user demo_user_001
+2026-02-13 15:09:39,247 - BySideScheme - [INFO] - Detected 0 graph changes in last 72h for user demo_user_001.
+2026-02-13 15:09:45,310 - BySideScheme - [INFO] - Fetching situation for user: demo_user_001
+2026-02-13 15:09:45,311 - BySideScheme - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-13 15:09:45,315 - BySideScheme - [INFO] - Fetching situation for user: demo_user_001
+2026-02-13 15:09:45,316 - BySideScheme - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-13 15:09:46,402 - BySideScheme - [INFO] - Fetching all memories for user demo_user_001
+2026-02-13 15:09:46,409 - BySideScheme - [INFO] - Fetching all memories for user demo_user_001
+2026-02-13 15:09:47,225 - BySideScheme - [INFO] - Fetching situation for user: demo_user_001
+2026-02-13 15:09:47,225 - BySideScheme - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-13 15:09:47,227 - BySideScheme - [INFO] - Fetching situation for user: demo_user_001
+2026-02-13 15:09:47,227 - BySideScheme - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-13 15:09:54,811 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:10:03,842 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-13 15:10:03,851 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-13 15:10:06,220 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:10:06,445 - BySideScheme - [INFO] - Detected 0 graph changes in last 72h for user 小松.
+2026-02-13 15:10:06,446 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:10:06,502 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:10:06,522 - BySideScheme - [INFO] - Detected 0 graph changes in last 72h for user 小松.
+2026-02-13 15:10:06,523 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:10:07,439 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:10:07,442 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:10:09,655 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:10:09,657 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:10:13,647 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:10:13,649 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:10:21,865 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:10:21,868 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:10:23,433 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:10:23,436 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:10:26,344 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:10:26,347 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:10:27,857 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:10:27,866 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:10:27,892 - BySideScheme - [INFO] - Detected 0 graph changes in last 72h for user 小松.
+2026-02-13 15:10:27,893 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:10:27,904 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:10:27,924 - BySideScheme - [INFO] - Detected 0 graph changes in last 72h for user 小松.
+2026-02-13 15:10:51,123 - BySideScheme - [INFO] - Fetching situation for user: demo_user_001
+2026-02-13 15:10:51,124 - BySideScheme - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-13 15:10:51,127 - BySideScheme - [INFO] - Fetching situation for user: demo_user_001
+2026-02-13 15:10:51,127 - BySideScheme - [WARNING] - No situation found for user demo_user_001, using default.
+2026-02-13 15:10:56,000 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:10:56,003 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:14:36,928 - BySideScheme - [INFO] - Generating advice for user 小松. Fact: 今天上午部门例会上，王局建当众表扬了"搞了吗"系统的进度，但...
+2026-02-13 15:14:36,930 - BySideScheme - [INFO] - [小松] Processing daily input: 今天上午部门例会上，王局建当众表扬了"搞了吗"系统的进度，但话锋一转说"验收标准要从严，不能让上面挑...
+2026-02-13 15:15:12,435 - BySideScheme - [INFO] - [小松] Added new memories from generated advice.
+2026-02-13 15:15:27,814 - BySideScheme - [INFO] - Extracted 6 entities, 8 relations from text.
+2026-02-13 15:15:28,663 - BySideScheme - [INFO] - Merged 6 entities and 8 relations for user 小松.
+2026-02-13 15:15:28,663 - BySideScheme - [INFO] - [小松] Graph updated: 6 entities, 8 relations
+2026-02-13 15:15:28,663 - BySideScheme - [INFO] - Advice generated successfully for user 小松
+2026-02-13 15:15:36,645 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:15:36,648 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:15:37,792 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:15:37,821 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:15:37,971 - BySideScheme - [INFO] - Detected 14 graph changes in last 72h for user 小松.
+2026-02-13 15:15:37,973 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:15:37,985 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:15:38,008 - BySideScheme - [INFO] - Detected 14 graph changes in last 72h for user 小松.
+2026-02-13 15:17:28,380 - BySideScheme - [INFO] - Generating advice for user 小松. Fact: 张副总今天主动约我喝茶，说他最近在推"数字化品牌"战略，想把...
+2026-02-13 15:17:28,381 - BySideScheme - [INFO] - [小松] Processing daily input: 张副总今天主动约我喝茶，说他最近在推"数字化品牌"战略，想把"搞了吗"系统作为央企数字化转型的标杆案...
+2026-02-13 15:18:10,948 - BySideScheme - [INFO] - [小松] Added new memories from generated advice.
+2026-02-13 15:18:25,341 - BySideScheme - [INFO] - Extracted 7 entities, 7 relations from text.
+2026-02-13 15:18:25,691 - BySideScheme - [INFO] - Merged 7 entities and 7 relations for user 小松.
+2026-02-13 15:18:25,691 - BySideScheme - [INFO] - [小松] Graph updated: 7 entities, 7 relations
+2026-02-13 15:18:25,691 - BySideScheme - [INFO] - Advice generated successfully for user 小松
+2026-02-13 15:18:30,189 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:18:30,242 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:18:30,272 - BySideScheme - [INFO] - Detected 26 graph changes in last 72h for user 小松.
+2026-02-13 15:18:30,278 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:18:30,297 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:18:30,328 - BySideScheme - [INFO] - Detected 26 graph changes in last 72h for user 小松.
+2026-02-13 15:18:40,411 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:18:40,413 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:18:46,954 - BySideScheme - [INFO] - Generating advice for user 小松. Fact: 李工今天发现系统的权限模块存在一个潜在漏洞，虽然概率极低但理...
+2026-02-13 15:18:46,955 - BySideScheme - [INFO] - [小松] Processing daily input: 李工今天发现系统的权限模块存在一个潜在漏洞，虽然概率极低但理论上可能被利用。他建议我们内部先修复再上...
+2026-02-13 15:19:20,059 - BySideScheme - [INFO] - [小松] Added new memories from generated advice.
+2026-02-13 15:19:29,425 - BySideScheme - [INFO] - Extracted 4 entities, 5 relations from text.
+2026-02-13 15:19:29,597 - BySideScheme - [INFO] - Merged 4 entities and 5 relations for user 小松.
+2026-02-13 15:19:29,597 - BySideScheme - [INFO] - [小松] Graph updated: 4 entities, 5 relations
+2026-02-13 15:19:29,597 - BySideScheme - [INFO] - Advice generated successfully for user 小松
+2026-02-13 15:19:40,065 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-13 15:19:40,074 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-13 15:19:47,117 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:19:47,121 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:19:47,799 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:19:47,811 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:19:47,847 - BySideScheme - [INFO] - Detected 33 graph changes in last 72h for user 小松.
+2026-02-13 15:19:47,848 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:19:47,869 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:19:47,898 - BySideScheme - [INFO] - Detected 33 graph changes in last 72h for user 小松.
+2026-02-13 15:19:53,094 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:19:53,097 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:20:11,798 - BySideScheme - [INFO] - Generating advice for user 小松. Fact: 今天从HR朋友那里听到消息，处级副职的竞聘可能会提前到下个月...
+2026-02-13 15:20:11,798 - BySideScheme - [INFO] - [小松] Processing daily input: 今天从HR朋友那里听到消息，处级副职的竞聘可能会提前到下个月，而不是原定的下季度。目前内部有两个竞争...
+2026-02-13 15:20:53,676 - BySideScheme - [INFO] - [小松] Added new memories from generated advice.
+2026-02-13 15:21:07,699 - BySideScheme - [INFO] - Extracted 7 entities, 8 relations from text.
+2026-02-13 15:21:07,960 - BySideScheme - [INFO] - Merged 7 entities and 8 relations for user 小松.
+2026-02-13 15:21:07,960 - BySideScheme - [INFO] - [小松] Graph updated: 7 entities, 8 relations
+2026-02-13 15:21:07,960 - BySideScheme - [INFO] - Advice generated successfully for user 小松
+2026-02-13 15:21:18,033 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:21:18,048 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:21:18,077 - BySideScheme - [INFO] - Detected 42 graph changes in last 72h for user 小松.
+2026-02-13 15:21:18,078 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:21:18,092 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:21:18,115 - BySideScheme - [INFO] - Detected 42 graph changes in last 72h for user 小松.
+2026-02-13 15:21:23,462 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:21:23,466 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:21:36,572 - BySideScheme - [INFO] - Generating advice for user 小松. Fact: 刘总今天破天荒地来项目组视察，问了几个很宏观的问题，比如"这...
+2026-02-13 15:21:36,572 - BySideScheme - [INFO] - [小松] Processing daily input: 刘总今天破天荒地来项目组视察，问了几个很宏观的问题，比如"这个系统对集团十四五规划有什么支撑意义"。...
+2026-02-13 15:22:18,204 - BySideScheme - [INFO] - [小松] Added new memories from generated advice.
+2026-02-13 15:22:33,992 - BySideScheme - [INFO] - Extracted 7 entities, 8 relations from text.
+2026-02-13 15:22:34,142 - BySideScheme - [INFO] - Merged 7 entities and 8 relations for user 小松.
+2026-02-13 15:22:34,142 - BySideScheme - [INFO] - [小松] Graph updated: 7 entities, 8 relations
+2026-02-13 15:22:34,142 - BySideScheme - [INFO] - Advice generated successfully for user 小松
+2026-02-13 15:22:40,849 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:22:40,862 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:22:40,962 - BySideScheme - [INFO] - Detected 53 graph changes in last 72h for user 小松.
+2026-02-13 15:22:40,963 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:22:40,975 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:22:40,998 - BySideScheme - [INFO] - Detected 53 graph changes in last 72h for user 小松.
+2026-02-13 15:22:47,617 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:22:47,619 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:22:58,263 - BySideScheme - [INFO] - Generating advice for user 小松. Fact: 我主动找陈副总汇报了系统的安全架构设计，没提那个漏洞但针对性...
+2026-02-13 15:22:58,263 - BySideScheme - [INFO] - [小松] Processing daily input: 我主动找陈副总汇报了系统的安全架构设计，没提那个漏洞但针对性地展示了我们的安全防护层级。陈副总态度明...
+2026-02-13 15:23:36,513 - BySideScheme - [INFO] - [小松] Added new memories from generated advice.
+2026-02-13 15:23:49,430 - BySideScheme - [INFO] - Extracted 8 entities, 6 relations from text.
+2026-02-13 15:23:49,571 - BySideScheme - [INFO] - Merged 8 entities and 6 relations for user 小松.
+2026-02-13 15:23:49,571 - BySideScheme - [INFO] - [小松] Graph updated: 8 entities, 6 relations
+2026-02-13 15:23:49,571 - BySideScheme - [INFO] - Advice generated successfully for user 小松
+2026-02-13 15:23:53,311 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:23:53,332 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:23:53,362 - BySideScheme - [INFO] - Detected 63 graph changes in last 72h for user 小松.
+2026-02-13 15:23:53,366 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:23:53,380 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:23:53,402 - BySideScheme - [INFO] - Detected 63 graph changes in last 72h for user 小松.
+2026-02-13 15:24:03,131 - BySideScheme - [INFO] - Generating advice for user 小松. Fact: 王局建今天通知我，下周三将举行"搞了吗"系统的正式验收会，出...
+2026-02-13 15:24:03,132 - BySideScheme - [INFO] - [小松] Processing daily input: 王局建今天通知我，下周三将举行"搞了吗"系统的正式验收会，出席人员包括刘总、张副总、陈副总以及集团信...
+2026-02-13 15:24:48,924 - BySideScheme - [INFO] - [小松] Added new memories from generated advice.
+2026-02-13 15:25:05,732 - BySideScheme - [INFO] - Extracted 10 entities, 9 relations from text.
+2026-02-13 15:25:06,046 - BySideScheme - [INFO] - Merged 10 entities and 9 relations for user 小松.
+2026-02-13 15:25:06,046 - BySideScheme - [INFO] - [小松] Graph updated: 10 entities, 9 relations
+2026-02-13 15:25:06,046 - BySideScheme - [INFO] - Advice generated successfully for user 小松
+2026-02-13 15:25:07,617 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:25:07,620 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:25:08,404 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:25:08,429 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:25:08,466 - BySideScheme - [INFO] - Detected 71 graph changes in last 72h for user 小松.
+2026-02-13 15:25:08,467 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:25:08,478 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:25:08,496 - BySideScheme - [INFO] - Detected 71 graph changes in last 72h for user 小松.
+2026-02-13 15:25:14,939 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-13 15:25:14,948 - BySideScheme - [INFO] - Fetching all memories for user 小松
+2026-02-13 15:25:24,793 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:25:24,801 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:25:24,822 - BySideScheme - [INFO] - Detected 71 graph changes in last 72h for user 小松.
+2026-02-13 15:25:24,823 - BySideScheme - [INFO] - Fetching graph data for user 小松
+2026-02-13 15:25:24,835 - BySideScheme - [INFO] - Fetching graph insights for user 小松
+2026-02-13 15:25:24,854 - BySideScheme - [INFO] - Detected 71 graph changes in last 72h for user 小松.
+2026-02-13 15:25:25,295 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:25:25,297 - BySideScheme - [INFO] - Fetching situation for user: 小松
+2026-02-13 15:25:48,519 - BySideScheme - [INFO] - Using configured engine 'deepseek' for SIMULATOR_INSIGHTS_ENGINE
+2026-02-13 15:25:48,522 - BySideScheme - [INFO] - SimulatorInsightsEngine initialized with model: deepseek-chat
+2026-02-13 15:25:48,522 - BySideScheme - [INFO] - Database initialized at: /home/nyx/BySideScheme/BySideScheme_backend/data/app.db
+2026-02-13 15:25:48,566 - BySideScheme - [INFO] - Created new simulation session: 5a0f0ed1-3d16-43f2-a1c0-45ef6aff7adb
+2026-02-13 15:26:27,993 - BySideScheme - [INFO] - Session 5a0f0ed1-3d16-43f2-a1c0-45ef6aff7adb: User sending message: 项目上线了，出现了服务器资源紧张导致用户投诉
+2026-02-13 15:26:50,363 - BySideScheme - [INFO] - [王经理] Found relevant memories: - 项目上线了，出现了服务器资源紧张导致用户投诉
+2026-02-13 15:27:41,466 - BySideScheme - [INFO] - [李工] Found relevant memories: - 记得上周的评审会上，技术部提交的容量规划里明确写着'资源充足'
+- 认为现在的资源偏差需要解释清楚
+- 项目上线了，出现了服务器资源紧张导致用户投诉
+2026-02-13 15:28:09,596 - BySideScheme - [INFO] - [张副总 (部门副总 1)] Found relevant memories: - 在新系统上线前提醒过花里胡哨的功能撑不住实际流量
+- 项目上线了，出现了服务器资源紧张导致用户投诉
+- 记得上周的评审会上，技术部提交的容量规划里明确写着'资源充足'
+2026-02-13 15:28:44,035 - BySideScheme - [INFO] - [陈副总 (部门副总 2)] Found relevant memories: - 建议先临时扩容，同时让技术部重新做压力测试以找出瓶颈
+- 指出技术部的评估报告有问题
+- 建议市场部做好危机公关，防止负面消息扩散
+2026-02-13 15:29:34,805 - BySideScheme - [INFO] - [陈副总 (部门副总 2)] Found relevant memories: - 建议先临时扩容，同时让技术部重新做压力测试以找出瓶颈
+- 记得上周的评审会上，技术部提交的容量规划里明确写着'资源充足'
+- 指出技术部的评估报告有问题
+2026-02-13 15:30:59,007 - BySideScheme - [INFO] - [王经理] Found relevant memories: - 建议先临时扩容，同时让技术部重新做压力测试以找出瓶颈
+- 建议从技术部的季度绩效里扣除扩容预算
+- 建议在技术根本问题解决前先内部封存所有相关文档

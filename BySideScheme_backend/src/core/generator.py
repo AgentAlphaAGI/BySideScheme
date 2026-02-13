@@ -8,7 +8,7 @@ class NarrativeGenerator:
         self.client, self.model = LLMClientFactory.create_client("NARRATIVE_ENGINE")
         logger.info(f"NarrativeGenerator initialized with model: {self.model}")
 
-    def generate(self, fact: str, decision: dict, situation_context: str, memory_context: str) -> dict:
+    def generate(self, fact: str, decision: dict, situation_context: str, memory_context: str, graph_context: str = "") -> dict:
         """
         生成三层输出：对上、对自己、策略提示
         """
@@ -20,6 +20,7 @@ class NarrativeGenerator:
             user_msg = prompt_data["user"].format(
                 situation_context=situation_context,
                 memory_context=memory_context,
+                graph_context=graph_context or "(暂无图谱数据)",
                 fact=fact,
                 decision_json=json.dumps(decision, ensure_ascii=False)
             )

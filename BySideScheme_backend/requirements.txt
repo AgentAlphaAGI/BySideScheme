@@ -7,3 +7,4 @@ mem0ai
 qdrant-client
 pyautogen==0.2.35
 PyYAML
+neo4j

@@ -211,3 +211,56 @@ export interface MemoryQueryRequest {
   query: string;
   limit?: number;
 }
+
+// Graph Types
+export interface GraphNode {
+  id: string;
+  name: string;
+  type: 'Person' | 'Event' | 'Project' | 'Resource' | 'Organization';
+  properties: Record<string, any>;
+}
+
+export interface GraphEdge {
+  source: string;
+  target: string;
+  type: string;
+  weight: number;
+  sentiment: 'positive' | 'negative' | 'neutral';
+  confidence: number;
+  evidence: string[];
+}
+
+export interface GraphData {
+  nodes: GraphNode[];
+  edges: GraphEdge[];
+}
+
+export interface GraphChange {
+  change_type: string;
+  description: string;
+  timestamp: string;
+}
+
+export interface KeyPlayer {
+  name: string;
+  centrality: number;
+}
+
+export interface GraphInsights {
+  key_players: KeyPlayer[];
+  risk_relations: GraphEdge[];
+  recent_changes: { description: string; timestamp: string }[];
+}
+
+export interface GraphExtractRequest {
+  text: string;
+  situation_context?: string;
+}
+
+export interface GraphExtractResponse {
+  message: string;
+  extracted: {
+    entities: { name: string; type: string; properties: Record<string, any> }[];
+    relations: { source: string; target: string; type: string; properties: Record<string, any> }[];
+  };
+}
